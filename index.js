@@ -15,11 +15,6 @@ app.use(bodyParser.json(({limit: '50mb'})));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.all(`/api/${PACKAGE_NAME}`, require('./api/metadata.js').do);
 
-/** Remove on productions **/
-const cid   = '3963534793.95249355829';
-const cs    = '29754c215432261d1fa99dbfde8ef212';
-const scope = '';
-
 for(let route in API) {
     app.post(`/api/${PACKAGE_NAME}/${route}`, _(function* (req, res) {
         let r  = {
