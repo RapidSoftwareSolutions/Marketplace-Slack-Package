@@ -20,24 +20,6 @@ const cid   = '3963534793.95249355829';
 const cs    = '29754c215432261d1fa99dbfde8ef212';
 const scope = '';
 
-app.all(`/api/${PACKAGE_NAME}/token`, function(req, res) {
-    let qs = `client_id=${cid}&scope=${scope}`;
-    res.redirect('https://slack.com/oauth/authorize\?' + qs);
-});
-
-app.all(`/api/${PACKAGE_NAME}/callback`, function(req, res) {
-    let code = req.query.code;
-    let uri  = `https://slack.com/api/oauth.access?client_id=${cid}&client_secret=${cs}&code=${code}`;
-
-    console.log(uri);
-
-    request(uri, (error, response, body) => {
-        if (!error && response.statusCode == 200) res.send(body);
-        else res.end(response.statusCode);
-    });    
-});
-/*  */
-
 for(let route in API) {
     app.post(`/api/${PACKAGE_NAME}/${route}`, _(function* (req, res) {
         let r  = {
