@@ -1,15 +1,11 @@
 const lib       = require('../lib/functions');
 const WebClient = require('@slack/client').WebClient;
 const request   = require('request');
-const fs        = require('fs');
-const path      = require('path');
-const spawn     = require('child_process').spawnSync
-
 
 module.exports = (req, res) => {
     let {
-    	token,
-    	file,
+        token,
+        file,
         count,
         page
     } = req.body.args;
@@ -18,5 +14,5 @@ module.exports = (req, res) => {
 
     let slack = new WebClient(token);
 
-	return slack.files.info(file, { count, page });
+    return slack.files.info(file, { count, page });
 }

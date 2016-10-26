@@ -8,13 +8,13 @@ const spawn     = require('child_process').spawnSync
 
 module.exports = (req, res) => {
     let {
-    	token,
-    	file
+        token,
+        file
     } = req.body.args;
 
     if(!token || !file) throw new Error('Required fields: token, file');
 
     let slack = new WebClient(token);
 
-	return slack.files.sharedPublicURL(file);
+    return slack.files.sharedPublicURL(file);
 }

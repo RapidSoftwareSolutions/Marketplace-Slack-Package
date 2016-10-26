@@ -8,8 +8,8 @@ const spawn     = require('child_process').spawnSync
 
 module.exports = (req, res) => {
     let {
-    	token,
-    	channel,
+        token,
+        channel,
         user,
         timestampFrom,
         timestampTo,
@@ -22,7 +22,7 @@ module.exports = (req, res) => {
 
     let slack = new WebClient(token);
 
-	return slack.files.list(lib.clearArgs({
+    return slack.files.list(lib.clearArgs({
         channel:       channel,
         user:          user,
         timestampFrom: timestampFrom,

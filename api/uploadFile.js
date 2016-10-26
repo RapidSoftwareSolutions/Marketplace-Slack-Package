@@ -5,11 +5,10 @@ const fs        = require('fs');
 const path      = require('path');
 const spawn     = require('child_process').spawnSync
 
-
 module.exports = (req, res) => {
     let {
-    	token,
-    	file,
+        token,
+        file,
         filetype,
         filename,
         title,
@@ -51,5 +50,5 @@ module.exports = (req, res) => {
 
     fs.unlink(fn, () => {});
 
-	return slack.files.upload(filename, options);
+    return slack.files.upload(filename, options);
 }

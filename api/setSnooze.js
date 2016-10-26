@@ -3,13 +3,13 @@ const WebClient = require('@slack/client').WebClient;
 
 module.exports = (req, res) => {
     let {
-    	token,
-    	numMinutes,
+        token,
+        numMinutes,
     } = req.body.args;
 
     if(!token || !numMinutes) throw new Error('Required fields: token, numMinutes');
 
     let slack = new WebClient(token);
 
-	return slack.dnd.setSnooze(numMinutes);
+    return slack.dnd.setSnooze(numMinutes);
 }

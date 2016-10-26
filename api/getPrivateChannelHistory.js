@@ -3,24 +3,24 @@ const WebClient = require('@slack/client').WebClient;
 
 module.exports = (req, res) => {
     let {
-    	token,
-    	channel,
-    	latest,
-		oldest,
-		inclusive,
-		count,
-		unreads
+        token,
+        channel,
+        latest,
+        oldest,
+        inclusive,
+        count,
+        unreads
     } = req.body.args;
 
     if(!token || !channel) throw new Error('Required fields: token, channel');
 
     let slack = new WebClient(token);
 
-	return slack.groups.history(channel, {
-		latest,
-		oldest,
-		inclusive,
-		count,
-		unreads
-	});
+    return slack.groups.history(channel, {
+        latest,
+        oldest,
+        inclusive,
+        count,
+        unreads
+    });
 }

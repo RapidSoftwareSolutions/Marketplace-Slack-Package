@@ -168,7 +168,7 @@ module.exports.do = function(req, res){
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to archive.",
+                    info: "Channel to fetch.",
                 },
                 {
                     name: "latest",
@@ -488,30 +488,30 @@ module.exports.do = function(req, res){
             ]*/
         }, {
             "name":"unarchiveChannel",
-                    //"description", "",
-                    "args":[
-                        {
-                            name: "token",
-                            type: "String",
-                            info: "Authentication token (Requires scope: channels:write)",
-                        },
-                        {
-                            name: "channel",
-                            type: "String",
-                            info: "Channel to unarchive.",
-                        }
-                    ],
-                    /*'callbacks':[
-                        {
-                            'name':'error',
-                            'info': 'Error'
-                        },
-                        {
-                            'name':'success',
-                            'info': 'Success'
-                        }
-                    ]*/
-                }, {
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: channels:write)",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel to unarchive.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
             "name":"getPrivateChannels",
             //"description", "",
             "args":[
@@ -598,7 +598,7 @@ module.exports.do = function(req, res){
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to archive.",
+                    info: "Private Channel to fetch.",
                 },
                 {
                     name: "latest",
@@ -967,6 +967,321 @@ module.exports.do = function(req, res){
                 }
             ]*/
         }, {
+            "name":"closeDirectMessageChannel",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: channels:write)",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Direct Message Channel to close.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getDirectMessageChannelHistory",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: im:history)",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel to fetch.",
+                },
+                {
+                    name: "latest",
+                    type: "String",
+                    info: "End of time range of messages to include in results.",
+                },
+                {
+                    name: "oldest",
+                    type: "String",
+                    info: "Start of time range of messages to include in results.",
+                },
+                {
+                    name: "inclusive",
+                    type: "Number",
+                    info: "Include messages with latest or oldest timestamp in results.",
+                },
+                {
+                    name: "count",
+                    type: "Number",
+                    info: "Number of messages to return, between 1 and 1000.",
+                },
+                {
+                    name: "unreads",
+                    type: "String",
+                    info: "Include unread_count_display in the output?",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getUserImChannels",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: im:history)",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"markDirectMessageChannel",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: im:write)",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel to set reading cursor in.",
+                },
+                {
+                    name: "ts",
+                    type: "String",
+                    info: "Timestamp of the most recently seen message.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"openDirectMessageChannel",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: im:write)",
+                },
+                {
+                    name: "user",
+                    type: "String",
+                    info: "User to open a direct message channel with.",
+                },
+                {
+                    name: "returnIm",
+                    type: "String",
+                    info: "Boolean, indicates you want the full IM channel definition in the response.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getAccessToken",
+            //"description", "",
+            "args":[
+                {
+                    name: "clientId",
+                    type: "String",
+                    info: "Issued when you created your application.",
+                },
+                {
+                    name: "clientSecret",
+                    type: "String",
+                    info: "Issued when you created your application.",
+                },
+                {
+                    name: "code",
+                    type: "String",
+                    info: "The code param returned via the OAuth callback.",
+                },
+                {
+                    name: "redirectUri",
+                    type: "String",
+                    info: "This must match the originally submitted URI (if one was sent).",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"closeMultipartyDirectMessageChannel",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: mpim:write)",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Multiparty Direct Message Channel to close.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info':'Success'
+                }
+            ]*/
+        }, {
+            "name":"getMultipartyDirectMessageChannelHistory",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: mpim:history)",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel to fetch.",
+                },
+                {
+                    name: "latest",
+                    type: "String",
+                    info: "End of time range of messages to include in results.",
+                },
+                {
+                    name: "oldest",
+                    type: "String",
+                    info: "Start of time range of messages to include in results.",
+                },
+                {
+                    name: "inclusive",
+                    type: "Number",
+                    info: "Include messages with latest or oldest timestamp in results.",
+                },
+                {
+                    name: "count",
+                    type: "Number",
+                    info: "Number of messages to return, between 1 and 1000.",
+                },
+                {
+                    name: "unreads",
+                    type: "String",
+                    info: "Include unread_count_display in the output?",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getMultipartyDirectMessageChannels",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: mpim:write)",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"markMultipartyDirectMessageChannel",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: mpim:write)",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel to set reading cursor in.",
+                },
+                {
+                    name: "ts",
+                    type: "String",
+                    info: "Timestamp of the most recently seen message.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
             "name":"deleteChat",
             //"description", "",
             "args":[
@@ -1002,6 +1317,31 @@ module.exports.do = function(req, res){
                 }
             ]*/
         }, {
+            "name":"openMultipartyDirectMessageChannel",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: channels:write)",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Multiparty Direct Message to open.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {    
             "name":"sendMeMessage",
             //"description", "",
             "args":[
@@ -1687,6 +2027,1211 @@ module.exports.do = function(req, res){
                     'info': 'Success'
                 }
             ]*/
-        }]
+        }, {
+            "name":"pinItemToChannel",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: pins:write)",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel to pin the item in.",
+                },
+                {
+                    name: "file",
+                    type: "String",
+                    info: "File to pin.",
+                },
+                {
+                    name: "fileComment",
+                    type: "String",
+                    info: "File comment to pin.",
+                },
+                {
+                    name: "timestamp",
+                    type: "String",
+                    info: " Timestamp of the message to pin.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getChannelPinnedItems",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Requires scope: pins:read",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel fetch pins.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"unpinItemToChannel",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: pins:write)",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel to pin the item in.",
+                },
+                {
+                    name: "file",
+                    type: "String",
+                    info: "File to un-pin.",
+                },
+                {
+                    name: "fileComment",
+                    type: "String",
+                    info: "File comment to un-pin.",
+                },
+                {
+                    name: "timestamp",
+                    type: "String",
+                    info: " Timestamp of the message to un-pin.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"addReaction",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: pins:write)",
+                },
+                {
+                    name: "name",
+                    type: "String",
+                    info: "Reaction (emoji) name.",
+                },
+                {
+                    name: "file",
+                    type: "String",
+                    info: "File to add reaction to.",
+                },
+                {
+                    name: "fileComment",
+                    type: "String",
+                    info: "File comment to add reaction to.",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel where the message to add reaction to was posted.",
+                },
+                {
+                    name: "timestamp",
+                    type: "String",
+                    info: "Timestamp of the message to add reaction to.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getReaction",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: pins:write)",
+                },
+                {
+                    name: "file",
+                    type: "String",
+                    info: "File to get reaction to.",
+                },
+                {
+                    name: "fileComment",
+                    type: "String",
+                    info: "File comment to get reaction to.",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel where the message to get reaction to was posted.",
+                },
+                {
+                    name: "timestamp",
+                    type: "String",
+                    info: "Timestamp of the message to get reaction to.",
+                },
+                {
+                    name: "full",
+                    type: "String",
+                    info: "If true always return the complete reaction list.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getReactions",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: pins:write)",
+                },
+                {
+                    name: "user",
+                    type: "String",
+                    info: "Show reactions made by this user. Defaults to the authed user.",
+                },
+                {
+                    name: "full",
+                    type: "String",
+                    info: "If true always return the complete reaction list.",
+                },
+                {
+                    name: "count",
+                    type: "String",
+                    info: "Number of items to return per page.",
+                },
+                {
+                    name: "page",
+                    type: "String",
+                    info: "Page number of results to return.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"removeReaction",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: pins:write)",
+                },
+                {
+                    name: "name",
+                    type: "String",
+                    info: "Reaction (emoji) name.",
+                },
+                {
+                    name: "file",
+                    type: "String",
+                    info: "File to remove reaction from.",
+                },
+                {
+                    name: "fileComment",
+                    type: "String",
+                    info: "File comment to remove reaction from.",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel where the message to remove reaction from was posted.",
+                },
+                {
+                    name: "timestamp",
+                    type: "String",
+                    info: "Timestamp of the message to remove reaction from.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"startRealTimeMessaging",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: pins:write)",
+                },
+                {
+                    name: "simpleLatest",
+                    type: "String",
+                    info: "Return timestamp only for latest message object of each channel (improves performance).",
+                },
+                {
+                    name: "noUnreads",
+                    type: "String",
+                    info: "Skip unread counts for each channel (improves performance).",
+                },
+                {
+                    name: "mpimAware",
+                    type: "String",
+                    info: "Returns MPIMs to the client in the API response.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"searchItem",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: pins:write)",
+                },
+                {
+                    name: "query",
+                    type: "String",
+                    info: "Search query. May contains booleans, etc.",
+                },
+                {
+                    name: "sort",
+                    type: "String",
+                    info: "Return matches sorted by either score or timestamp.",
+                },
+                {
+                    name: "sortDir",
+                    type: "String",
+                    info: "Change sort direction to ascending (asc) or descending (desc).",
+                },
+                {
+                    name: "highlight",
+                    type: "Number",
+                    info: "Pass a value of 1 to enable query highlight markers (see below).",
+                },
+                {
+                    name: "count",
+                    type: "String",
+                    info: "Number of items to return per page.",
+                },
+                {
+                    name: "page",
+                    type: "String",
+                    info: "Page number of results to return.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"addStar",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: starts:write)",
+                },
+                {
+                    name: "file",
+                    type: "String",
+                    info: "File to add star to.",
+                },
+                {
+                    name: "fileComment",
+                    type: "String",
+                    info: "File comment to add star to.",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel to add star to, or channel where the message to add star to was posted (used with timestamp).",
+                },
+                {
+                    name: "timestamp",
+                    type: "String",
+                    info: "Timestamp of the message to add star to.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getStarts",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: starts:read)",
+                },
+                {
+                    name: "count",
+                    type: "String",
+                    info: "Number of items to return per page.",
+                },
+                {
+                    name: "page",
+                    type: "String",
+                    info: "Page number of results to return.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"removeStar",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: starts:write)",
+                },
+                {
+                    name: "file",
+                    type: "String",
+                    info: "File to remove star from.",
+                },
+                {
+                    name: "fileComment",
+                    type: "String",
+                    info: "File comment to remove star from.",
+                },
+                {
+                    name: "channel",
+                    type: "String",
+                    info: "Channel to remove star to, or channel where the message to remove star to was posted (used with timestamp).",
+                },
+                {
+                    name: "timestamp",
+                    type: "String",
+                    info: "Timestamp of the message to remove star from.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getTeamInfo",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: team:read)",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getTeamProfile",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users.profile:read)",
+                },
+                {
+                    name: "visibility",
+                    type: "String",
+                    info: "Filter by visibility. (all)",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getAccessLogs",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: admin).",
+                },
+                {
+                    name: "count",
+                    type: "String",
+                    info: "Number of items to return per page.",
+                },
+                {
+                    name: "page",
+                    type: "String",
+                    info: "Page number of results to return.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"createUserGroup",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope usergroups:write).",
+                },
+                {
+                    name: "name",
+                    type: "String",
+                    info: "A name for the User Group. Must be unique among User Groups.",
+                },
+                {
+                    name: "handle",
+                    type: "String",
+                    info: "A mention handle. Must be unique among channels, users and User Groups.",
+                },
+                {
+                    name: "description",
+                    type: "String",
+                    info: "A short description of the User Group.",
+                },
+                {
+                    name: "channels",
+                    type: "String",
+                    info: "A comma separated string of encoded channel IDs for which the User Group uses as a default.",
+                },
+                {
+                    name: "includeCount",
+                    type: "String",
+                    info: "Include the number of users in each User Group.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"disableUserGroup",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: usergroups:write).",
+                },
+                {
+                    name: "usergroup",
+                    type: "String",
+                    info: "The encoded ID of the User Group to disable.",
+                },
+                {
+                    name: "includeСount",
+                    type: "String",
+                    info: "Include the number of users in the User Group.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"enableUserGroup",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: usergroups:write).",
+                },
+                {
+                    name: "usergroup",
+                    type: "String",
+                    info: "The encoded ID of the User Group to enable.",
+                },
+                {
+                    name: "includeСount",
+                    type: "String",
+                    info: "Include the number of users in the User Group.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getUserGroups",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: usergroups:read).",
+                },
+                {
+                    name: "includeDisabled",
+                    type: "String",
+                    info: "Include disabled User Groups.",
+                },
+                {
+                    name: "includeСount",
+                    type: "String",
+                    info: "Include the number of users in each User Group.",
+                },
+                {
+                    name: "includeUsers",
+                    type: "String",
+                    info: "Include the list of users for each User Group.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"updateUserGroup",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: usergroups:write).",
+                },
+                {
+                    name: "usergroup",
+                    type: "String",
+                    info: "The encoded ID of the User Group to update.",
+                },
+                {
+                    name: "name",
+                    type: "String",
+                    info: "A name for the User Group. Must be unique among User Groups.",
+                },
+                {
+                    name: "handle",
+                    type: "String",
+                    info: "A mention handle. Must be unique among channels, users and User Groups.",
+                },
+                {
+                    name: "description",
+                    type: "String",
+                    info: "A short description of the User Group.",
+                },
+                {
+                    name: "channels",
+                    type: "String",
+                    info: "A comma separated string of encoded channel IDs for which the User Group uses as a default.",
+                },
+                {
+                    name: "includeCount",
+                    type: "String",
+                    info: "Include the number of users in the User Group.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getUserGroupUsers",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: usergroups:write).",
+                },
+                {
+                    name: "usergroup",
+                    type: "String",
+                    info: "The encoded ID of the User Group to update.",
+                },
+                {
+                    name: "includeDisabled",
+                    type: "String",
+                    info: "Include the number of users in the User Group.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"updateUserGroupUsers",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: usergroups:write)",
+                },
+                {
+                    name: "usergroup",
+                    type: "String",
+                    info: "The encoded ID of the User Group to update.",
+                },
+                {
+                    name: "users",
+                    type: "String",
+                    info: "A comma separated string of encoded user IDs that represent the entire list of users for the User Group.",
+                },
+                {
+                    name: "includeCount",
+                    type: "Number",
+                    info: "Include the number of users in the User Group.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getUserProfile",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users.profile:read)",
+                },
+                {
+                    name: "user",
+                    type: "String",
+                    info: "User to retrieve profile info for.",
+                },
+                {
+                    name: "includeLabels",
+                    type: "Number",
+                    info: "Include labels for each ID in custom profile fields. (0)",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"setUserProfile",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users.profile:write)",
+                },
+                {
+                    name: "user",
+                    type: "String",
+                    info: "ID of user to change. This argument may only be specified by team admins on paid teams.",
+                },
+                {
+                    name: "profile",
+                    type: "JSON",
+                    info: "Collection of key:value pairs presented as a URL-encoded JSON hash.",
+                },
+                {
+                    name: "name",
+                    type: "String",
+                    info: "Name of a single key to set. Usable only if profile is not passed.",
+                },
+                {
+                    name: "value",
+                    type: "String",
+                    info: "Value to set a single key to. Usable only if profile is not passed.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"deleteUserProfilePhoto",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users.profile:write)",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getUserPresence",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users:read)",
+                },
+                {
+                    name: "user",
+                    type: "String",
+                    info: "User to get presence info on. Defaults to the authed user.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getUserIdentity",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: identity.basic)",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getUser",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users:read)",
+                },
+                {
+                    name: "user",
+                    type: "String",
+                    info: "User to get presence info on. Defaults to the authed user.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getTeamUsers",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users:read)",
+                },
+                {
+                    name: "presence",
+                    type: "String",
+                    info: "Whether to include presence data in the output.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"setUserActive",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users:write)",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"setPhoto",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users:write)",
+                },
+                {
+                    name: "image",
+                    type: "String",
+                    info: "File contents.",
+                },
+                {
+                    name: "cropX",
+                    type: "Number",
+                    info: "X coordinate of top-left corner of crop box.",
+                },
+                {
+                    name: "cropY",
+                    type: "Number",
+                    info: "Y coordinate of top-left corner of crop box.",
+                },
+                {
+                    name: "cropW",
+                    type: "Number",
+                    info: "Width/height of crop box (always square).",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"setUserPresence",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users:write)",
+                },
+                {
+                    name: "presence",
+                    type: "String",
+                    info: "Either auto or away.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"markReminderComplete",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users:write)",
+                },
+                {
+                    name: "reminder",
+                    type: "String",
+                    info: "The ID of the reminder to be marked as complete.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"createReminder",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: reminders:write)",
+                },
+                {
+                    name: "text",
+                    type: "String",
+                    info: "The content of the reminder.",
+                },
+                {
+                    name: "time",
+                    type: "String",
+                    info: 'When this reminder should happen: the Unix timestamp (up to five years from now), the number of seconds until the reminder (if within 24 hours), or a natural language description (Ex. "in 15 minutes," or "every Thursday")',
+                },
+                {
+                    name: "user",
+                    type: "String",
+                    info: "The user who will receive the reminder. If no user is specified, the reminder will go to user who created it.",
+                },
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"deleteReminder",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users:write)",
+                },
+                {
+                    name: "reminder",
+                    type: "String",
+                    info: "The ID of the reminder to delete.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getSingleReminder",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users:write)",
+                },
+                {
+                    name: "reminder",
+                    type: "String",
+                    info: "The ID of the reminder.",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        }, {
+            "name":"getReminders",
+            //"description", "",
+            "args":[
+                {
+                    name: "token",
+                    type: "String",
+                    info: "Authentication token (Requires scope: users:read)",
+                }
+            ],
+            /*'callbacks':[
+                {
+                    'name':'error',
+                    'info': 'Error'
+                },
+                {
+                    'name':'success',
+                    'info': 'Success'
+                }
+            ]*/
+        },]
     })
 };
