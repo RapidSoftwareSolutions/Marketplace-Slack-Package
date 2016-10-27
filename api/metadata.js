@@ -13,7 +13,7 @@ module.exports.do = function(req, res){
         },
         'blocks': [{
             "name":"revokeAuth",
-            //"description", "",
+            "description": "This method revokes an access token. Use it when you no longer need a token. For example, with a Sign In With Slack app, call this to log a user out.",
             "args":[
                 {
                     name: "token",
@@ -26,7 +26,7 @@ module.exports.do = function(req, res){
                     info: "Setting this parameter to 1 triggers a testing mode where the specified token will not actually be revoked.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -35,10 +35,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"testAuth",
-            //"description", "",
+            "description": "This method checks authentication and tells you who you are.",
             "args":[
                 {
                     name: "token",
@@ -46,7 +46,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -55,10 +55,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getBotInfo",
-            //"description", "",
+            "description": "This method returns information about a bot user.",
             "args":[
                 {
                     name: "token",
@@ -71,7 +71,7 @@ module.exports.do = function(req, res){
                     info: "Bot user to get info on.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -80,10 +80,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getChannels",
-            //"description", "",
+            "description": "This method returns a list of all channels in the team. This includes channels the caller is in, channels they are not currently in, and archived channels but does not include private channels. The number of (non-deactivated) members in each channel is also returned.",
             "args":[
                 {
                     name: "token",
@@ -96,7 +96,7 @@ module.exports.do = function(req, res){
                     info: "Don't return archived channels.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -105,10 +105,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"createChannel",
-            //"description", "",
+            "description": "This method is used to create a channel.",
             "args":[
                 {
                     name: "token",
@@ -121,7 +121,7 @@ module.exports.do = function(req, res){
                     info: "Name of channel to create.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -130,10 +130,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"archiveChannel",
-            //"description", "",
+            "description": "This method archives a channel.",
             "args":[
                 {
                     name: "token",
@@ -146,7 +146,7 @@ module.exports.do = function(req, res){
                     info: "Channel to archive.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -155,10 +155,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getChannelHistory",
-            //"description", "",
+            "description": "This method returns a portion of message events from the specified channel.",
             "args":[
                 {
                     name: "token",
@@ -196,7 +196,7 @@ module.exports.do = function(req, res){
                     info: "Include unread_count_display in the output?",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -205,10 +205,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getChannelInfo",
-            //"description", "",
+            "description": "This method returns information about a team channel.",
             "args":[
                 {
                     name: "token",
@@ -221,7 +221,7 @@ module.exports.do = function(req, res){
                     info: "Channel to get info on.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -230,10 +230,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"inviteToChannel",
-            //"description", "",
+            "description": "This method is used to invite a user to a channel. The calling user must be a member of the channel.",
             "args":[
                 {
                     name: "token",
@@ -251,7 +251,7 @@ module.exports.do = function(req, res){
                     info: "User to invite to channel.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -260,10 +260,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"joinChannel",
-            //"description", "",
+            "description": "This method is used to join a channel. If the channel does not exist, it is created.",
             "args":[
                 {
                     name: "token",
@@ -276,7 +276,7 @@ module.exports.do = function(req, res){
                     info: "Name of channel to join.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -285,10 +285,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"kickFromChannel",
-            //"description", "",
+            "description": "This method allows a user to remove another member from a team channel.",
             "args":[
                 {
                     name: "token",
@@ -306,7 +306,7 @@ module.exports.do = function(req, res){
                     info: "User to remove from channel.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -315,10 +315,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"leaveChannel",
-            //"description", "",
+            "description": "This method is used to leave a channel.",
             "args":[
                 {
                     name: "token",
@@ -331,7 +331,7 @@ module.exports.do = function(req, res){
                     info: "Channel to leave.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -340,35 +340,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
-        }, {
-            "name":"leaveChannel",
-            //"description", "",
-            "args":[
-                {
-                    name: "token",
-                    type: "String",
-                    info: "Authentication token (Requires scope: channels:write)",
-                },
-                {
-                    name: "channel",
-                    type: "String",
-                    info: "Channel to leave.",
-                }
-            ],
-            /*'callbacks':[
-                {
-                    'name':'error',
-                    'info': 'Error'
-                },
-                {
-                    'name':'success',
-                    'info': 'Success'
-                }
-            ]*/
+            ]
         }, {
             "name":"markChannel",
-            //"description", "",
+            "description": "This method moves the read cursor in a channel.",
             "args":[
                 {
                     name: "token",
@@ -386,7 +361,7 @@ module.exports.do = function(req, res){
                     info: "Timestamp of the most recently seen message.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -395,10 +370,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"renameChannel",
-            //"description", "",
+            "description": "This method renames a team channel.",
             "args":[
                 {
                     name: "token",
@@ -416,7 +391,7 @@ module.exports.do = function(req, res){
                     info: "New name for channel.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -425,10 +400,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"setChannelPurpose",
-            //"description", "",
+            "description": "This method is used to change the purpose of a channel. The calling user must be a member of the channel.",
             "args":[
                 {
                     name: "token",
@@ -446,7 +421,7 @@ module.exports.do = function(req, res){
                     info: "The new purpose.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -455,10 +430,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"setChannelTopic",
-            //"description", "",
+            "description": "This method is used to change the topic of a channel. The calling user must be a member of the channel.",
             "args":[
                 {
                     name: "token",
@@ -476,7 +451,7 @@ module.exports.do = function(req, res){
                     info: "The new topic.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -485,10 +460,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"unarchiveChannel",
-            //"description", "",
+            "description": "This method unarchives a channel. The calling user is added to the channel.",
             "args":[
                 {
                     name: "token",
@@ -501,7 +476,7 @@ module.exports.do = function(req, res){
                     info: "Channel to unarchive.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -510,10 +485,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getPrivateChannels",
-            //"description", "",
+            "description": "This method returns a list of private channels in the team that the caller is in and archived groups that the caller was in. The list of (non-deactivated) members in each private channel is also returned.",
             "args":[
                 {
                     name: "token",
@@ -526,7 +501,7 @@ module.exports.do = function(req, res){
                     info: "Don't return archived PrivateChannels.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -535,10 +510,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"createPrivateChannel",
-            //"description", "",
+            "description": "This method creates a private channel.",
             "args":[
                 {
                     name: "token",
@@ -551,7 +526,7 @@ module.exports.do = function(req, res){
                     info: "Name of PrivateChannel to create.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -560,10 +535,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"archivePrivateChannel",
-            //"description", "",
+            "description": "This method archives a channel.",
             "args":[
                 {
                     name: "token",
@@ -576,7 +551,7 @@ module.exports.do = function(req, res){
                     info: "PrivateChannel to archive.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -585,10 +560,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getPrivateChannelHistory",
-            //"description", "",
+            "description": "This method returns a portion of messages/events from the specified private channel. To read the entire history for a private channel, call the method with no latest or oldest arguments, and then continue paging using the instructions below.",
             "args":[
                 {
                     name: "token",
@@ -626,7 +601,7 @@ module.exports.do = function(req, res){
                     info: "Include unread_count_display in the output?",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -635,10 +610,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getPrivateChannelInfo",
-            //"description", "",
+            "description": "This method returns information about a private channel.",
             "args":[
                 {
                     name: "token",
@@ -651,7 +626,7 @@ module.exports.do = function(req, res){
                     info: "PrivateChannel to get info on.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -660,10 +635,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"inviteToPrivateChannel",
-            //"description", "",
+            "description": "This method is used to invite a user to a private channel. The calling user must be a member of the private channel.",
             "args":[
                 {
                     name: "token",
@@ -681,7 +656,7 @@ module.exports.do = function(req, res){
                     info: "User to invite to PrivateChannel.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -690,10 +665,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"kickFromPrivateChannel",
-            //"description", "",
+            "description": "This method allows a user to remove another member from a private channel.",
             "args":[
                 {
                     name: "token",
@@ -711,7 +686,7 @@ module.exports.do = function(req, res){
                     info: "User to remove from PrivateChannel.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -720,10 +695,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"leavePrivateChannel",
-            //"description", "",
+            "description": "This method is used to leave a channel.",
             "args":[
                 {
                     name: "token",
@@ -736,7 +711,7 @@ module.exports.do = function(req, res){
                     info: "PrivateChannel to leave.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -745,35 +720,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
-        }, {
-            "name":"leavePrivateChannel",
-            //"description", "",
-            "args":[
-                {
-                    name: "token",
-                    type: "String",
-                    info: "Authentication token (Requires scope: channels:write)",
-                },
-                {
-                    name: "channel",
-                    type: "String",
-                    info: "PrivateChannel to leave.",
-                }
-            ],
-            /*'callbacks':[
-                {
-                    'name':'error',
-                    'info': 'Error'
-                },
-                {
-                    'name':'success',
-                    'info': 'Success'
-                }
-            ]*/
+            ]
         }, {
             "name":"markPrivateChannel",
-            //"description", "",
+            "description": "This method moves the read cursor in a private channel.",
             "args":[
                 {
                     name: "token",
@@ -791,7 +741,7 @@ module.exports.do = function(req, res){
                     info: "Timestamp of the most recently seen message.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -800,10 +750,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"renamePrivateChannel",
-            //"description", "",
+            "description": "This method renames a private channel.",
             "args":[
                 {
                     name: "token",
@@ -821,7 +771,7 @@ module.exports.do = function(req, res){
                     info: "New name for PrivateChannel.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -830,10 +780,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"setPrivateChannelPurpose",
-            //"description", "",
+            "description": "This method is used to change the purpose of a private channel. The calling user must be a member of the private channel.",
             "args":[
                 {
                     name: "token",
@@ -851,7 +801,7 @@ module.exports.do = function(req, res){
                     info: "The new purpose.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -860,10 +810,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"setPrivateChannelTopic",
-            //"description", "",
+            "description": "This method is used to change the topic of a private channel. The calling user must be a member of the private channel.",
             "args":[
                 {
                     name: "token",
@@ -881,7 +831,7 @@ module.exports.do = function(req, res){
                     info: "The new topic.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -890,10 +840,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"unarchivePrivateChannel",
-            //"description", "",
+            "description": "This method unarchives a private channel.",
             "args":[
                 {
                     name: "token",
@@ -906,7 +856,7 @@ module.exports.do = function(req, res){
                     info: "PrivateChannel to unarchive.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -915,10 +865,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"openPrivateChannel",
-            //"description", "",
+            "description": "This method opens a private channel.",
             "args":[
                 {
                     name: "token",
@@ -931,7 +881,7 @@ module.exports.do = function(req, res){
                     info: "PrivateChannel to open.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -940,10 +890,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"closePrivateChannel",
-            //"description", "",
+            "description": "This method closes a private channel.",
             "args":[
                 {
                     name: "token",
@@ -956,7 +906,7 @@ module.exports.do = function(req, res){
                     info: "PrivateChannel to close.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -965,10 +915,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"closeDirectMessageChannel",
-            //"description", "",
+            "description": "This method closes a direct message channel.",
             "args":[
                 {
                     name: "token",
@@ -981,7 +931,7 @@ module.exports.do = function(req, res){
                     info: "Direct Message Channel to close.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -990,10 +940,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getDirectMessageChannelHistory",
-            //"description", "",
+            "description": "This method returns a portion of messages/events from the specified direct message channel. To read the entire history for a direct message channel, call the method with no latest or oldest arguments, and then continue paging using the instructions below.",
             "args":[
                 {
                     name: "token",
@@ -1031,7 +981,7 @@ module.exports.do = function(req, res){
                     info: "Include unread_count_display in the output?",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1040,10 +990,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getUserImChannels",
-            //"description", "",
+            "description": "This method returns a list of all im channels that the user has.",
             "args":[
                 {
                     name: "token",
@@ -1051,7 +1001,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: im:history)",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1060,10 +1010,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"markDirectMessageChannel",
-            //"description", "",
+            "description": "This method moves the read cursor in a direct message channel.",
             "args":[
                 {
                     name: "token",
@@ -1081,7 +1031,7 @@ module.exports.do = function(req, res){
                     info: "Timestamp of the most recently seen message.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1090,10 +1040,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"openDirectMessageChannel",
-            //"description", "",
+            "description": "This method opens a direct message channel with another member of your Slack team.",
             "args":[
                 {
                     name: "token",
@@ -1111,7 +1061,7 @@ module.exports.do = function(req, res){
                     info: "Boolean, indicates you want the full IM channel definition in the response.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1120,10 +1070,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getAccessToken",
-            //"description", "",
+            "description": "This method allows you to exchange a temporary OAuth code for an API access token. This is used as part of the OAuth authentication flow.",
             "args":[
                 {
                     name: "clientId",
@@ -1146,7 +1096,7 @@ module.exports.do = function(req, res){
                     info: "This must match the originally submitted URI (if one was sent).",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1155,10 +1105,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"closeMultipartyDirectMessageChannel",
-            //"description", "",
+            "description": "This method closes a multiparty direct message channel.",
             "args":[
                 {
                     name: "token",
@@ -1171,7 +1121,7 @@ module.exports.do = function(req, res){
                     info: "Multiparty Direct Message Channel to close.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1180,10 +1130,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info':'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getMultipartyDirectMessageChannelHistory",
-            //"description", "",
+            "description": "This method returns a portion of messages/events from the specified multiparty direct message channel. To read the entire history for a multiparty direct message, call the method with no latest or oldest arguments, and then continue paging using the instructions below.",
             "args":[
                 {
                     name: "token",
@@ -1221,7 +1171,7 @@ module.exports.do = function(req, res){
                     info: "Include unread_count_display in the output?",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1230,10 +1180,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getMultipartyDirectMessageChannels",
-            //"description", "",
+            "description": "This method returns a list of all multiparty direct message channels that the user has.",
             "args":[
                 {
                     name: "token",
@@ -1241,7 +1191,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: mpim:write)",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1250,10 +1200,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"markMultipartyDirectMessageChannel",
-            //"description", "",
+            "description": "This method moves the read cursor in a multiparty direct message channel.",
             "args":[
                 {
                     name: "token",
@@ -1271,7 +1221,7 @@ module.exports.do = function(req, res){
                     info: "Timestamp of the most recently seen message.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1280,10 +1230,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"deleteChat",
-            //"description", "",
+            "description": "This method deletes a message from a channel.",
             "args":[
                 {
                     name: "token",
@@ -1306,7 +1256,7 @@ module.exports.do = function(req, res){
                     info: "Pass true to delete the message as the authed user. Bot users in this context are considered authed users.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1315,10 +1265,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"openMultipartyDirectMessageChannel",
-            //"description", "",
+            "description": "This method opens a multiparty direct message.",
             "args":[
                 {
                     name: "token",
@@ -1331,7 +1281,7 @@ module.exports.do = function(req, res){
                     info: "Multiparty Direct Message to open.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1340,10 +1290,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {    
             "name":"sendMeMessage",
-            //"description", "",
+            "description": "This method sends a me message to a channel from the calling user.",
             "args":[
                 {
                     name: "token",
@@ -1361,7 +1311,7 @@ module.exports.do = function(req, res){
                     info: "Text of the message to send.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1370,10 +1320,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"postMessage",
-            //"description", "",
+            "description": "This method posts a message to a public channel, private channel, or direct message/IM channel.",
             "args":[
                 {
                     name: "token",
@@ -1436,7 +1386,7 @@ module.exports.do = function(req, res){
                     info: "Emoji to use as the icon for this message. Overrides icon_url. Must be used in conjunction with as_user  set to false, otherwise ignored.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1445,10 +1395,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"updateMessage",
-            //"description", "",
+            "description": "This method updates a message in a channel. Though related to chat.postMessage, some parameters of chat.update are handled differently.",
             "args":[
                 {
                     name: "token",
@@ -1491,7 +1441,7 @@ module.exports.do = function(req, res){
                     info: "Pass true to post the message as the authed user, instead of as a bot. Defaults to false.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1500,10 +1450,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"endDoNotDisturb",
-            //"description", "",
+            "description": "Ends the user's currently scheduled Do Not Disturb session immediately.",
             "args":[
                 {
                     name: "token",
@@ -1511,7 +1461,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: dnd:write)",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1520,10 +1470,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"endSnooze",
-            //"description", "",
+            "description": "Ends the current user's snooze mode immediately.",
             "args":[
                 {
                     name: "token",
@@ -1531,7 +1481,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: dnd:write)",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1540,10 +1490,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getDoNotDisturbInfo",
-            //"description", "",
+            "description": "Provides information about a user's current Do Not Disturb settings.",
             "args":[
                 {
                     name: "token",
@@ -1556,7 +1506,7 @@ module.exports.do = function(req, res){
                     info: "User to fetch status for (defaults to current user)",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1565,10 +1515,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"setSnooze",
-            //"description", "",
+            "description": "Adjusts the snooze duration for a user's Do Not Disturb settings. If a snooze session is not already active for the user, invoking this method will begin one for the specified duration.",
             "args":[
                 {
                     name: "token",
@@ -1581,7 +1531,7 @@ module.exports.do = function(req, res){
                     info: "Number of minutes, from now, to snooze until.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1590,35 +1540,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
-        }, {
-            "name":"setSnooze",
-            //"description", "",
-            "args":[
-                {
-                    name: "token",
-                    type: "String",
-                    info: "Authentication token (Requires scope: dnd:write)",
-                },
-                {
-                    name: "numMinutes",
-                    type: "Number",
-                    info: "Number of minutes, from now, to snooze until.",
-                },
-            ],
-            /*'callbacks':[
-                {
-                    'name':'error',
-                    'info': 'Error'
-                },
-                {
-                    'name':'success',
-                    'info': 'Success'
-                }
-            ]*/
+            ]
         }, {
             "name":"getTeamUserDoNotDisturbInfo",
-            //"description", "",
+            "description": "Provides information about the current Do Not Disturb settings for users of a Slack team.",
             "args":[
                 {
                     name: "token",
@@ -1631,7 +1556,7 @@ module.exports.do = function(req, res){
                     info: "Comma-separated list of users to fetch Do Not Disturb status for.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1640,35 +1565,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
-        }, {
-            "name":"setSnooze",
-            //"description", "",
-            "args":[
-                {
-                    name: "token",
-                    type: "String",
-                    info: "Authentication token (Requires scope: dnd:write)",
-                },
-                {
-                    name: "numMinutes",
-                    type: "Number",
-                    info: "Number of minutes, from now, to snooze until.",
-                },
-            ],
-            /*'callbacks':[
-                {
-                    'name':'error',
-                    'info': 'Error'
-                },
-                {
-                    'name':'success',
-                    'info': 'Success'
-                }
-            ]*/
+            ]
         }, {
             "name":"getTeamCustomEmoji",
-            //"description", "",
+            "description": "This method lists the custom emoji for a team.",
             "args":[
                 {
                     name: "token",
@@ -1676,7 +1576,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: emoji:read)",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1685,10 +1585,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"addFileComment",
-            //"description", "",
+            "description": "Add a comment to an existing file.",
             "args":[
                 {
                     name: "token",
@@ -1711,7 +1611,7 @@ module.exports.do = function(req, res){
                     info: "Channel id (encoded) of which location to associate with the new comment.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1720,10 +1620,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"deleteFileComment",
-            //"description", "",
+            "description": "Delete an existing comment on a file. Only the original author of the comment or a Team Administrator may delete a file comment.",
             "args":[
                 {
                     name: "token",
@@ -1741,7 +1641,7 @@ module.exports.do = function(req, res){
                     info: "The comment to delete.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1750,10 +1650,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"updateFileComment",
-            //"description", "",
+            "description": "Edit an existing comment on a file. Only the user who created a comment may make edits. Teams may configure a limited time window during which file comment edits are allowed.",
             "args":[
                 {
                     name: "token",
@@ -1777,7 +1677,7 @@ module.exports.do = function(req, res){
                 },
 
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1786,10 +1686,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"deleteFile",
-            //"description", "",
+            "description": "This method deletes a file from your team.",
             "args":[
                 {
                     name: "token",
@@ -1802,7 +1702,7 @@ module.exports.do = function(req, res){
                     info: "ID of file to delete.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1811,10 +1711,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"uploadFile",
-            //"description", "",
+            "description": "This method allows you to create or upload an existing file.",
             "args":[
                 {
                     name: "token",
@@ -1852,7 +1752,7 @@ module.exports.do = function(req, res){
                     info: "Comma-separated list of channel names or IDs where the file will be shared.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1861,10 +1761,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getFileInfo",
-            //"description", "",
+            "description": "This method returns information about a file in your team.",
             "args":[
                 {
                     name: "token",
@@ -1887,7 +1787,7 @@ module.exports.do = function(req, res){
                     info: "Page number of results to return.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1896,10 +1796,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getTeamFiles",
-            //"description", "",
+            "description": "This method returns a list of files within the team. It can be filtered and sliced in various ways.",
             "args":[
                 {
                     name: "token",
@@ -1942,7 +1842,7 @@ module.exports.do = function(req, res){
                     info: "Page number of results to return.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1951,10 +1851,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"disableFileSharing",
-            //"description", "",
+            "description": "",
             "args":[
                 {
                     name: "token",
@@ -1967,7 +1867,7 @@ module.exports.do = function(req, res){
                     info: "File to revoke.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -1976,10 +1876,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"disableFileSharing",
-            //"description", "",
+            "description": "This method disables public/external sharing for a file.",
             "args":[
                 {
                     name: "token",
@@ -1992,7 +1892,7 @@ module.exports.do = function(req, res){
                     info: "File to revoke.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2001,10 +1901,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"enableFileSharing",
-            //"description", "",
+            "description": "This method enables public/external sharing for a file.",
             "args":[
                 {
                     name: "token",
@@ -2017,7 +1917,7 @@ module.exports.do = function(req, res){
                     info: "File to revoke.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2026,10 +1926,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"pinItemToChannel",
-            //"description", "",
+            "description": "This method pins an item (file, file comment, channel message, or group message) to a particular channel. The channel argument is required and one of file, file_comment, or timestamp must also be specified.",
             "args":[
                 {
                     name: "token",
@@ -2057,7 +1957,7 @@ module.exports.do = function(req, res){
                     info: " Timestamp of the message to pin.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2066,10 +1966,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getChannelPinnedItems",
-            //"description", "",
+            "description": "This method lists the items pinned to a channel.",
             "args":[
                 {
                     name: "token",
@@ -2082,7 +1982,7 @@ module.exports.do = function(req, res){
                     info: "Channel fetch pins.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2091,10 +1991,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"unpinItemToChannel",
-            //"description", "",
+            "description": "This method un-pins an item (file, file comment, channel message, or group message) from a channel. The channel argument is required and one of file, file_comment, or timestamp must also be specified.",
             "args":[
                 {
                     name: "token",
@@ -2122,7 +2022,7 @@ module.exports.do = function(req, res){
                     info: " Timestamp of the message to un-pin.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2131,10 +2031,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"addReaction",
-            //"description", "",
+            "description": "This method adds a reaction (emoji) to an item (file, file comment, channel message, group message, or direct message). One of file, file_comment, or the combination of channel and timestamp must be specified.",
             "args":[
                 {
                     name: "token",
@@ -2167,7 +2067,7 @@ module.exports.do = function(req, res){
                     info: "Timestamp of the message to add reaction to.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2176,10 +2076,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getReaction",
-            //"description", "",
+            "description": "This method returns a list of all reactions for a single item (file, file comment, channel message, group message, or direct message).",
             "args":[
                 {
                     name: "token",
@@ -2212,7 +2112,7 @@ module.exports.do = function(req, res){
                     info: "If true always return the complete reaction list.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2221,10 +2121,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getReactions",
-            //"description", "",
+            "description": "This method returns a list of all items (file, file comment, channel message, group message, or direct message) reacted to by a user.",
             "args":[
                 {
                     name: "token",
@@ -2252,7 +2152,7 @@ module.exports.do = function(req, res){
                     info: "Page number of results to return.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2261,10 +2161,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"removeReaction",
-            //"description", "",
+            "description": "This method removes a reaction (emoji) from an item (file, file comment, channel message, group message, or direct message). One of file, file_comment, or the combination of channel and timestamp must be specified.",
             "args":[
                 {
                     name: "token",
@@ -2297,7 +2197,7 @@ module.exports.do = function(req, res){
                     info: "Timestamp of the message to remove reaction from.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2306,10 +2206,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"startRealTimeMessaging",
-            //"description", "",
+            "description": "This method starts a Real Time Messaging API session. Refer to the RTM API documentation for full details on how to use the RTM API.",
             "args":[
                 {
                     name: "token",
@@ -2332,7 +2232,7 @@ module.exports.do = function(req, res){
                     info: "Returns MPIMs to the client in the API response.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2341,10 +2241,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"searchItem",
-            //"description", "",
+            "description": "This method allows users and applications to search both messages and files in a single call.",
             "args":[
                 {
                     name: "token",
@@ -2382,7 +2282,7 @@ module.exports.do = function(req, res){
                     info: "Page number of results to return.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2391,10 +2291,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"addStar",
-            //"description", "",
+            "description": "This method adds a star to an item (message, file, file comment, channel, private group, or DM) on behalf of the authenticated user. One of file, file_comment, channel, or the combination of channel and timestamp must be specified.",
             "args":[
                 {
                     name: "token",
@@ -2422,7 +2322,7 @@ module.exports.do = function(req, res){
                     info: "Timestamp of the message to add star to.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2431,10 +2331,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getStarts",
-            //"description", "",
+            "description": "This method lists the items starred by the authed user.",
             "args":[
                 {
                     name: "token",
@@ -2452,7 +2352,7 @@ module.exports.do = function(req, res){
                     info: "Page number of results to return.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2461,10 +2361,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"removeStar",
-            //"description", "",
+            "description": "This method removes a star from an item (message, file, file comment, channel, private group, or DM) on behalf of the authenticated user. One of file, file_comment, channel, or the combination of channel and timestamp must be specified.",
             "args":[
                 {
                     name: "token",
@@ -2492,7 +2392,7 @@ module.exports.do = function(req, res){
                     info: "Timestamp of the message to remove star from.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2501,10 +2401,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getTeamInfo",
-            //"description", "",
+            "description": "This method provides information about your team.",
             "args":[
                 {
                     name: "token",
@@ -2512,7 +2412,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: team:read)",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2521,10 +2421,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getTeamProfile",
-            //"description", "",
+            "description": "This method is used to get the profile field definitions for this team.",
             "args":[
                 {
                     name: "token",
@@ -2537,7 +2437,7 @@ module.exports.do = function(req, res){
                     info: "Filter by visibility. (all)",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2546,10 +2446,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getAccessLogs",
-            //"description", "",
+            "description": "This method is used to get the access logs for users on a team.",
             "args":[
                 {
                     name: "token",
@@ -2567,7 +2467,7 @@ module.exports.do = function(req, res){
                     info: "Page number of results to return.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2576,10 +2476,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"createUserGroup",
-            //"description", "",
+            "description": "This method is used to create a User Group.",
             "args":[
                 {
                     name: "token",
@@ -2612,7 +2512,7 @@ module.exports.do = function(req, res){
                     info: "Include the number of users in each User Group.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2621,10 +2521,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"disableUserGroup",
-            //"description", "",
+            "description": "This method disables an existing User Group.",
             "args":[
                 {
                     name: "token",
@@ -2642,7 +2542,7 @@ module.exports.do = function(req, res){
                     info: "Include the number of users in the User Group.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2651,10 +2551,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"enableUserGroup",
-            //"description", "",
+            "description": "This method enables a User Group which was previously disabled.",
             "args":[
                 {
                     name: "token",
@@ -2672,7 +2572,7 @@ module.exports.do = function(req, res){
                     info: "Include the number of users in the User Group.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2681,10 +2581,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getUserGroups",
-            //"description", "",
+            "description": "This method returns a list of all User Groups in the team. This can optionally include disabled User Groups.",
             "args":[
                 {
                     name: "token",
@@ -2707,7 +2607,7 @@ module.exports.do = function(req, res){
                     info: "Include the list of users for each User Group.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2716,10 +2616,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"updateUserGroup",
-            //"description", "",
+            "description": "This method updates the properties of an existing User Group.",
             "args":[
                 {
                     name: "token",
@@ -2757,7 +2657,7 @@ module.exports.do = function(req, res){
                     info: "Include the number of users in the User Group.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2766,10 +2666,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getUserGroupUsers",
-            //"description", "",
+            "description": "This method returns a list of all users within a User Group.",
             "args":[
                 {
                     name: "token",
@@ -2787,7 +2687,7 @@ module.exports.do = function(req, res){
                     info: "Include the number of users in the User Group.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2796,10 +2696,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"updateUserGroupUsers",
-            //"description", "",
+            "description": "This method updates the list of users that belong to a User Group. This method replaces all users in a User Group with the list of users provided in the users parameter.",
             "args":[
                 {
                     name: "token",
@@ -2822,7 +2722,7 @@ module.exports.do = function(req, res){
                     info: "Include the number of users in the User Group.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2831,10 +2731,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getUserProfile",
-            //"description", "",
+            "description": "This method is used to get the profile information for a user.",
             "args":[
                 {
                     name: "token",
@@ -2852,7 +2752,7 @@ module.exports.do = function(req, res){
                     info: "Include labels for each ID in custom profile fields. (0)",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2861,10 +2761,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"setUserProfile",
-            //"description", "",
+            "description": "This method is used to set the profile information for a user.",
             "args":[
                 {
                     name: "token",
@@ -2892,7 +2792,7 @@ module.exports.do = function(req, res){
                     info: "Value to set a single key to. Usable only if profile is not passed.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2901,10 +2801,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"deleteUserProfilePhoto",
-            //"description", "",
+            "description": "This method allows the user to delete their profile image. It will clear whatever image is currently set.",
             "args":[
                 {
                     name: "token",
@@ -2912,7 +2812,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: users.profile:write)",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2921,10 +2821,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getUserPresence",
-            //"description", "",
+            "description": "This method lets you find out information about a user's presence. Consult the presence documentation for more details.",
             "args":[
                 {
                     name: "token",
@@ -2937,7 +2837,7 @@ module.exports.do = function(req, res){
                     info: "User to get presence info on. Defaults to the authed user.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2946,10 +2846,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getUserIdentity",
-            //"description", "",
+            "description": "After your Slack app is awarded an identity token through Sign in with Slack, use this method to retrieve a user's identity.",
             "args":[
                 {
                     name: "token",
@@ -2957,7 +2857,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: identity.basic)",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2966,10 +2866,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getUser",
-            //"description", "",
+            "description": "This method returns information about a team member.",
             "args":[
                 {
                     name: "token",
@@ -2982,7 +2882,7 @@ module.exports.do = function(req, res){
                     info: "User to get presence info on. Defaults to the authed user.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -2991,10 +2891,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getTeamUsers",
-            //"description", "",
+            "description": "This method returns a list of all users in the team. This includes deleted/deactivated users.",
             "args":[
                 {
                     name: "token",
@@ -3007,7 +2907,7 @@ module.exports.do = function(req, res){
                     info: "Whether to include presence data in the output.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -3016,10 +2916,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"setUserActive",
-            //"description", "",
+            "description": "This method lets the slack messaging server know that the authenticated user is currently active.",
             "args":[
                 {
                     name: "token",
@@ -3027,7 +2927,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: users:write)",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -3036,10 +2936,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"setPhoto",
-            //"description", "",
+            "description": "This method allows the user to set their profile image. The caller can pass image data via image.",
             "args":[
                 {
                     name: "token",
@@ -3067,7 +2967,7 @@ module.exports.do = function(req, res){
                     info: "Width/height of crop box (always square).",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -3076,10 +2976,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"setUserPresence",
-            //"description", "",
+            "description": "This method lets you set the calling user's manual presence. Consult the presence documentation for more details.",
             "args":[
                 {
                     name: "token",
@@ -3092,7 +2992,7 @@ module.exports.do = function(req, res){
                     info: "Either auto or away.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -3101,10 +3001,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"markReminderComplete",
-            //"description", "",
+            "description": "This method completes a reminder.",
             "args":[
                 {
                     name: "token",
@@ -3117,7 +3017,7 @@ module.exports.do = function(req, res){
                     info: "The ID of the reminder to be marked as complete.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -3126,10 +3026,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"createReminder",
-            //"description", "",
+            "description": "This method creates a reminder.",
             "args":[
                 {
                     name: "token",
@@ -3152,7 +3052,7 @@ module.exports.do = function(req, res){
                     info: "The user who will receive the reminder. If no user is specified, the reminder will go to user who created it.",
                 },
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -3161,10 +3061,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"deleteReminder",
-            //"description", "",
+            "description": "This method deletes a reminder.",
             "args":[
                 {
                     name: "token",
@@ -3177,7 +3077,7 @@ module.exports.do = function(req, res){
                     info: "The ID of the reminder to delete.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -3186,10 +3086,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getSingleReminder",
-            //"description", "",
+            "description": "This method returns information about a reminder.",
             "args":[
                 {
                     name: "token",
@@ -3202,7 +3102,7 @@ module.exports.do = function(req, res){
                     info: "The ID of the reminder.",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -3211,10 +3111,10 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         }, {
             "name":"getReminders",
-            //"description", "",
+            "description": "This method lists all reminders created by or for a given user.",
             "args":[
                 {
                     name: "token",
@@ -3222,7 +3122,7 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: users:read)",
                 }
             ],
-            /*'callbacks':[
+            'callbacks':[
                 {
                     'name':'error',
                     'info': 'Error'
@@ -3231,7 +3131,7 @@ module.exports.do = function(req, res){
                     'name':'success',
                     'info': 'Success'
                 }
-            ]*/
+            ]
         },]
     })
 };
