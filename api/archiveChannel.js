@@ -11,5 +11,5 @@ module.exports = (req, res) => {
 
     let slack = new WebClient(token);
 
-    return slack.channels.open(channel);
+    return slack.channels.archive(channel);
 }

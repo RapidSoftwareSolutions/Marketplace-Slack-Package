@@ -5,7 +5,7 @@ module.exports = (req, res) => {
     let {
         token,
         channel,
-        ts,
+        timestamp,
         text="Message from rapidapi.com.",
         parse,
         linkNames,
@@ -25,7 +25,7 @@ module.exports = (req, res) => {
         }
     }
 
-    return slack.chat.update(ts, channel, text, {
+    return slack.chat.update(timestamp, channel, text, {
         parse:        parse,
         link_names:   linkNames,
         attachments:  attachments,

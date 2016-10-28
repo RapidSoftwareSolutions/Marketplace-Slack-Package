@@ -8,11 +8,11 @@ module.exports = (req, res) => {
         includeCount
     } = req.body.args;
 
-    if(!token || !name) throw new Error('Required fields: token, name');
+    if(!token || !usergroup) throw new Error('Required fields: token, usergroup');
 
     let slack = new WebClient(token);
 
-    return slack.usergroups.enable(usergroups, {
+    return slack.usergroups.enable(usergroup, {
         include_count: includeCount
     });
 }

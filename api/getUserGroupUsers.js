@@ -12,7 +12,7 @@ module.exports = (req, res) => {
 
     let slack = new WebClient(token);
 
-    return slack.usergroups.users.list(usergroup, {
+    return slack['usergroups.users'].list(usergroup, {
         include_disabled: includeDisabled
     });
 }

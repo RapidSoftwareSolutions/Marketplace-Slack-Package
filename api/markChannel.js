@@ -5,12 +5,12 @@ module.exports = (req, res) => {
     let {
         token,
         channel,
-        ts
+        timestamp
     } = req.body.args;
 
-    if(!token || !channel || !ts) throw new Error('Required fields: token, channel, ts');
+    if(!token || !channel || !timestamp) throw new Error('Required fields: token, channel, timestamp');
 
     let slack = new WebClient(token);
 
-    return slack.channels.mark(channel, ts);
+    return slack.channels.mark(channel, timestamp);
 }

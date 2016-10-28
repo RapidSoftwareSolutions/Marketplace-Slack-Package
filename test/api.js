@@ -906,9 +906,9 @@ describe('Slack package', function() {
         });
     });
 
-    it('/unpinItemToChannel', function(done) {
+    it('/unpinItemFromChannel', function(done) {
         return request(app)
-        .post('/api/'+ global.PACKAGE_NAME +'/unpinItemToChannel')
+        .post('/api/'+ global.PACKAGE_NAME +'/unpinItemFromChannel')
         .send({args: { 
             token, channel, timestamp: ts
         }})

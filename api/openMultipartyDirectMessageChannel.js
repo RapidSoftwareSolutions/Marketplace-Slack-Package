@@ -4,12 +4,12 @@ const WebClient = require('@slack/client').WebClient;
 module.exports = (req, res) => {
     let {
         token,
-        channel,
+        users,
     } = req.body.args;
 
-    if(!token || !channel) throw new Error('Required fields: token, channel');
+    if(!token || !users) throw new Error('Required fields: token, users');
 
     let slack = new WebClient(token);
 
-    return slack.mpim.open(channel);
+    return slack.mpim.open(users);
 }

@@ -73,7 +73,7 @@ Slack oauth docomentation: [https://api.slack.com/docs/oauth](https://api.slack.
 * [enableFileSharing](#enableFileSharing)
 * [pinItemToChannel](#pinItemToChannel)
 * [getChannelPinnedItems](#getChannelPinnedItems)
-* [unpinItemToChannel](#unpinItemToChannel)
+* [unpinItemFromChannel](#unpinItemFromChannel)
 * [addReaction](#addReaction)
 * [getReaction](#getReaction)
 * [getReactions](#getReactions)
@@ -227,11 +227,11 @@ This method is used to leave a channel.
 ## Slack.markChannel
 This method moves the read cursor in a channel.
 
-| Field  | Type  | Description
-|--------|-------|----------
-| token  | String| Authentication token (Requires scope: channels:write)
-| channel| String| Channel to set reading cursor in.
-| ts     | String| Timestamp of the most recently seen message.
+| Field    | Type  | Description
+|----------|-------|----------
+| token    | String| Authentication token (Requires scope: channels:write)
+| channel  | String| Channel to set reading cursor in.
+| timestamp| String| Timestamp of the most recently seen message.
 
 <a name="renameChannel"/>
 ## Slack.renameChannel
@@ -355,11 +355,11 @@ This method is used to leave a channel.
 ## Slack.markPrivateChannel
 This method moves the read cursor in a private channel.
 
-| Field  | Type  | Description
-|--------|-------|----------
-| token  | String| Authentication token (Requires scope: channels:write)
-| channel| String| PrivateChannel to set reading cursor in.
-| ts     | String| Timestamp of the most recently seen message.
+| Field    | Type  | Description
+|----------|-------|----------
+| token    | String| Authentication token (Requires scope: channels:write)
+| channel  | String| PrivateChannel to set reading cursor in.
+| timestamp| String| Timestamp of the most recently seen message.
 
 <a name="renamePrivateChannel"/>
 ## Slack.renamePrivateChannel
@@ -453,11 +453,11 @@ This method returns a list of all im channels that the user has.
 ## Slack.markDirectMessageChannel
 This method moves the read cursor in a direct message channel.
 
-| Field  | Type  | Description
-|--------|-------|----------
-| token  | String| Authentication token (Requires scope: im:write)
-| channel| String| Channel to set reading cursor in.
-| ts     | String| Timestamp of the most recently seen message.
+| Field    | Type  | Description
+|----------|-------|----------
+| token    | String| Authentication token (Requires scope: im:write)
+| channel  | String| Channel to set reading cursor in.
+| timestamp| String| Timestamp of the most recently seen message.
 
 <a name="openDirectMessageChannel"/>
 ## Slack.openDirectMessageChannel
@@ -515,11 +515,11 @@ This method returns a list of all multiparty direct message channels that the us
 ## Slack.markMultipartyDirectMessageChannel
 This method moves the read cursor in a multiparty direct message channel.
 
-| Field  | Type  | Description
-|--------|-------|----------
-| token  | String| Authentication token (Requires scope: mpim:write)
-| channel| String| Channel to set reading cursor in.
-| ts     | String| Timestamp of the most recently seen message.
+| Field    | Type  | Description
+|----------|-------|----------
+| token    | String| Authentication token (Requires scope: mpim:write)
+| channel  | String| Channel to set reading cursor in.
+| timestamp| String| Timestamp of the most recently seen message.
 
 <a name="deleteChat"/>
 ## Slack.deleteChat
@@ -536,10 +536,10 @@ This method deletes a message from a channel.
 ## Slack.openMultipartyDirectMessageChannel
 This method opens a multiparty direct message.
 
-| Field  | Type  | Description
-|--------|-------|----------
-| token  | String| Authentication token (Requires scope: channels:write)
-| channel| String| Multiparty Direct Message to open.
+| Field| Type  | Description
+|------|-------|----------
+| token| String| Authentication token (Requires scope: channels:write)
+| users| String| Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned.
 
 <a name="sendMeMessage"/>
 ## Slack.sendMeMessage
@@ -578,7 +578,7 @@ This method updates a message in a channel. Though related to chat.postMessage, 
 |------------|-------|----------
 | token      | String| Authentication token (Requires scope: chat:write:bot or chat:write:user)
 | channel    | String| Channel containing the message to be deleted.
-| ts         | String| Timestamp of the message to be updated.
+| timestamp  | String| Timestamp of the message to be updated.
 | text       | String| Text of the message to send.
 | parse      | String| Change how messages are treated.
 | linkNames  | String| Find and link channel names and usernames.
@@ -765,8 +765,8 @@ This method lists the items pinned to a channel.
 | token  | String| Requires scope: pins:read
 | channel| String| Channel fetch pins.
 
-<a name="unpinItemToChannel"/>
-## Slack.unpinItemToChannel
+<a name="unpinItemFromChannel"/>
+## Slack.unpinItemFromChannel
 This method un-pins an item (file, file comment, channel message, or group message) from a channel. The channel argument is required and one of file, file_comment, or timestamp must also be specified.
 
 | Field      | Type  | Description

@@ -356,7 +356,7 @@ module.exports.do = function(req, res){
                     info: "Channel to set reading cursor in.",
                 },
                 {
-                    name: "ts",
+                    name: "timestamp",
                     type: "String",
                     info: "Timestamp of the most recently seen message.",
                 }
@@ -736,7 +736,7 @@ module.exports.do = function(req, res){
                     info: "PrivateChannel to set reading cursor in.",
                 },
                 {
-                    name: "ts",
+                    name: "timestamp",
                     type: "String",
                     info: "Timestamp of the most recently seen message.",
                 }
@@ -1026,7 +1026,7 @@ module.exports.do = function(req, res){
                     info: "Channel to set reading cursor in.",
                 },
                 {
-                    name: "ts",
+                    name: "timestamp",
                     type: "String",
                     info: "Timestamp of the most recently seen message.",
                 }
@@ -1216,7 +1216,7 @@ module.exports.do = function(req, res){
                     info: "Channel to set reading cursor in.",
                 },
                 {
-                    name: "ts",
+                    name: "timestamp",
                     type: "String",
                     info: "Timestamp of the most recently seen message.",
                 }
@@ -1276,9 +1276,9 @@ module.exports.do = function(req, res){
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
-                    name: "channel",
+                    name: "users",
                     type: "String",
-                    info: "Multiparty Direct Message to open.",
+                    info: "Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned.",
                 }
             ],
             'callbacks':[
@@ -1411,7 +1411,7 @@ module.exports.do = function(req, res){
                     info: "Channel containing the message to be deleted.",
                 },
                 {
-                    name: "ts",
+                    name: "timestamp",
                     type: "String",
                     info: "Timestamp of the message to be updated.",
                 },
@@ -1993,7 +1993,7 @@ module.exports.do = function(req, res){
                 }
             ]
         }, {
-            "name":"unpinItemToChannel",
+            "name":"unpinItemFromChannel",
             "description": "This method un-pins an item (file, file comment, channel message, or group message) from a channel. The channel argument is required and one of file, file_comment, or timestamp must also be specified.",
             "args":[
                 {
