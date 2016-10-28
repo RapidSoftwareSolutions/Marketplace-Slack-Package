@@ -22,28 +22,16 @@ for(let route in API) {
             contextWrites: {}
         };
 
-        // runscope
-        req.body.args = req.body.args || req.body;
-
         let to = req.body.args.to || 'to';
         let response;
 
-        /*try {
+        try {
             response            = yield API[route](req, res);
             r.callback          = 'success';
             r.contextWrites[to] = JSON.stringify(response);
         } catch(e) {
             r.callback          = 'error';
             r.contextWrites[to] =  typeof e == 'object' ? e.message ? e.message : JSON.stringify(e) : e;
-        }*/
-
-        try {
-            response            = yield API[route](req, res);
-            r.outcome           = 'success';
-            r.payload           = JSON.stringify(response);
-        } catch(e) {
-            r.outcome           = 'error';
-            r.payload           =  typeof e == 'object' ? e.message ? e.message : JSON.stringify(e) : e;
         }
 
         res.status(200).send(r);
