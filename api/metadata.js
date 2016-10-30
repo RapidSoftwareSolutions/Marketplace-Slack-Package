@@ -2,7 +2,7 @@ module.exports.do = function(req, res){
     res.status(200).send({
         'package': 'Slack',
         'tagline': "Slack API Package",
-        "description": "This block can be used alone or in conjunction with each other to build many different kinds of Slack apps..",
+        "description": "This block can be used alone or in conjunction with each other to build many different kinds of Slack apps.",
         'image': 'https://upload.wikimedia.org/wikipedia/ru/4/41/Slack_logo.png',
         'repo': 'https://github.com/RapidSoftwareSolutions/',
         "accounts": {
@@ -17,7 +17,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -42,7 +42,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 }
             ],
@@ -62,7 +62,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token",
                 },
                 {
@@ -87,7 +87,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -112,7 +112,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -137,7 +137,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -162,7 +162,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -212,7 +212,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -237,7 +237,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -267,7 +267,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -292,7 +292,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -322,7 +322,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -347,7 +347,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -377,7 +377,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -407,7 +407,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -437,7 +437,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -467,7 +467,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -492,7 +492,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -517,7 +517,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -542,7 +542,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -567,7 +567,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -617,7 +617,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -642,7 +642,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -672,7 +672,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -702,7 +702,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -727,7 +727,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -757,7 +757,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -787,7 +787,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -817,7 +817,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -847,7 +847,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -872,7 +872,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -897,7 +897,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -922,7 +922,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -947,7 +947,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: im:history)",
                 },
                 {
@@ -997,7 +997,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: im:history)",
                 },
             ],
@@ -1017,7 +1017,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: im:write)",
                 },
                 {
@@ -1047,7 +1047,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: im:write)",
                 },
                 {
@@ -1112,7 +1112,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: mpim:write)",
                 },
                 {
@@ -1137,7 +1137,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: mpim:history)",
                 },
                 {
@@ -1187,7 +1187,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: mpim:write)",
                 }
             ],
@@ -1207,7 +1207,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: mpim:write)",
                 },
                 {
@@ -1237,7 +1237,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: chat:write:bot or chat:write:user)",
                 },
                 {
@@ -1272,7 +1272,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: channels:write)",
                 },
                 {
@@ -1297,7 +1297,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: chat:write:bot or chat:write:user)",
                 },
                 {
@@ -1327,7 +1327,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: chat:write:bot or chat:write:user)",
                 },
                 {
@@ -1402,7 +1402,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: chat:write:bot or chat:write:user)",
                 },
                 {
@@ -1457,7 +1457,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: dnd:write)",
                 },
             ],
@@ -1477,7 +1477,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: dnd:write)",
                 },
             ],
@@ -1497,7 +1497,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: dnd:write)",
                 },
                 {
@@ -1522,7 +1522,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: dnd:write)",
                 },
                 {
@@ -1547,7 +1547,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: dnd:read)",
                 },
                 {
@@ -1572,7 +1572,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: emoji:read)",
                 }
             ],
@@ -1592,7 +1592,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: files:write:user)",
                 },
                 {
@@ -1627,7 +1627,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: files:write:user)",
                 },
                 {
@@ -1657,7 +1657,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: files:write:user)",
                 },
                 {
@@ -1693,7 +1693,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: files:write:user)",
                 },
                 {
@@ -1718,7 +1718,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: files:write:user)",
                 },
                 {
@@ -1768,7 +1768,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: files:read)",
                 },
                 {
@@ -1803,7 +1803,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: files:read)",
                 },
                 {
@@ -1858,7 +1858,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: files:write:user)",
                 },
                 {
@@ -1883,7 +1883,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: files:write:user)",
                 },
                 {
@@ -1908,7 +1908,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: files:write:user)",
                 },
                 {
@@ -1933,7 +1933,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: pins:write)",
                 },
                 {
@@ -1973,7 +1973,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Requires scope: pins:read",
                 },
                 {
@@ -1998,7 +1998,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: pins:write)",
                 },
                 {
@@ -2038,7 +2038,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: pins:write)",
                 },
                 {
@@ -2083,7 +2083,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: pins:write)",
                 },
                 {
@@ -2128,7 +2128,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: pins:write)",
                 },
                 {
@@ -2168,7 +2168,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: pins:write)",
                 },
                 {
@@ -2213,7 +2213,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: pins:write)",
                 },
                 {
@@ -2248,7 +2248,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: pins:write)",
                 },
                 {
@@ -2298,7 +2298,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: starts:write)",
                 },
                 {
@@ -2333,12 +2333,12 @@ module.exports.do = function(req, res){
                 }
             ]
         }, {
-            "name":"getStarts",
+            "name":"getStars",
             "description": "This method lists the items starred by the authed user.",
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: starts:read)",
                 },
                 {
@@ -2368,7 +2368,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: starts:write)",
                 },
                 {
@@ -2408,7 +2408,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: team:read)",
                 }
             ],
@@ -2428,7 +2428,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users.profile:read)",
                 },
                 {
@@ -2453,7 +2453,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: admin).",
                 },
                 {
@@ -2483,7 +2483,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope usergroups:write).",
                 },
                 {
@@ -2528,7 +2528,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: usergroups:write).",
                 },
                 {
@@ -2558,7 +2558,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: usergroups:write).",
                 },
                 {
@@ -2588,7 +2588,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: usergroups:read).",
                 },
                 {
@@ -2623,7 +2623,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: usergroups:write).",
                 },
                 {
@@ -2673,7 +2673,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: usergroups:write).",
                 },
                 {
@@ -2703,7 +2703,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: usergroups:write)",
                 },
                 {
@@ -2738,7 +2738,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users.profile:read)",
                 },
                 {
@@ -2768,7 +2768,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users.profile:write)",
                 },
                 {
@@ -2808,7 +2808,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users.profile:write)",
                 },
             ],
@@ -2828,7 +2828,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users:read)",
                 },
                 {
@@ -2853,7 +2853,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: identity.basic)",
                 }
             ],
@@ -2873,7 +2873,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users:read)",
                 },
                 {
@@ -2898,7 +2898,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users:read)",
                 },
                 {
@@ -2923,7 +2923,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users:write)",
                 }
             ],
@@ -2943,7 +2943,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users:write)",
                 },
                 {
@@ -2983,7 +2983,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users:write)",
                 },
                 {
@@ -3008,7 +3008,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users:write)",
                 },
                 {
@@ -3033,7 +3033,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: reminders:write)",
                 },
                 {
@@ -3068,7 +3068,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users:write)",
                 },
                 {
@@ -3093,7 +3093,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users:write)",
                 },
                 {
@@ -3118,7 +3118,7 @@ module.exports.do = function(req, res){
             "args":[
                 {
                     name: "token",
-                    type: "String",
+                    type: "credentials",
                     info: "Authentication token (Requires scope: users:read)",
                 }
             ],
