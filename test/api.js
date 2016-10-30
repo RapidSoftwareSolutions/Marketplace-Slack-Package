@@ -966,9 +966,9 @@ describe('Slack package', function() {
         });
     });
 
-    it('/getStarts', function(done) {
+    it('/getStars', function(done) {
         return request(app)
-        .post('/api/'+ global.PACKAGE_NAME +'/getStarts')
+        .post('/api/'+ global.PACKAGE_NAME +'/getStars')
         .send({args: { 
             token, count
         }})
