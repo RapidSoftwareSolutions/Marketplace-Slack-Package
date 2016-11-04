@@ -1854,31 +1854,6 @@ module.exports.do = function(req, res){
             ]
         }, {
             "name":"disableFileSharing",
-            "description": "",
-            "args":[
-                {
-                    name: "token",
-                    type: "credentials",
-                    info: "Authentication token (Requires scope: files:write:user)",
-                },
-                {
-                    name: "file",
-                    type: "String",
-                    info: "File to revoke.",
-                }
-            ],
-            'callbacks':[
-                {
-                    'name':'error',
-                    'info': 'Error'
-                },
-                {
-                    'name':'success',
-                    'info': 'Success'
-                }
-            ]
-        }, {
-            "name":"disableFileSharing",
             "description": "This method disables public/external sharing for a file.",
             "args":[
                 {
