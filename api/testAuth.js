@@ -6,7 +6,7 @@ module.exports = (req, res) => {
         token,
     } = req.body.args;
 
-    if(!token) defer.reject('Required fields: token');
+    if(!token) throw new Error('Required fields: token');
 
     let slack = new WebClient(token);
 

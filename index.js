@@ -30,6 +30,7 @@ for(let route in API) {
             r.callback          = 'success';
             r.contextWrites[to] = JSON.stringify(response);
         } catch(e) {
+            console.log(e)
             r.callback          = 'error';
             r.contextWrites[to] =  typeof e == 'object' ? e.message ? e.message : JSON.stringify(e) : e;
         }
