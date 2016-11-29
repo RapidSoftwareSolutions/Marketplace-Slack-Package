@@ -30,12 +30,6 @@ for(let route in API) {
             r.callback          = 'success';
             r.contextWrites[to] = JSON.stringify(response);
         } catch(e) {
-            let error;
-
-            if (e.name == 'SlackAPIError') {
-                error = lib.errors[e.message] || 'func'
-            }
-
             r.callback          = 'error';
             r.contextWrites[to] =  e.name == 'SlackAPIError' ? lib.errors[e.message] || lib.parseError(e.message) : e.message;
         }
