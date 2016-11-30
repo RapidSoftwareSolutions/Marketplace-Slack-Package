@@ -3,7 +3,7 @@ module.exports.do = function(req, res){
         'package': 'Slack',
         'tagline': "Slack API Package",
         "description": "This block can be used alone or in conjunction with each other to build many different kinds of Slack apps.",
-        'image': 'https://upload.wikimedia.org/wikipedia/ru/4/41/Slack_logo.png',
+        'image': 'http://logo.clearbit.com/slack.com',
         'repo': 'https://github.com/RapidSoftwareSolutions/',
         "accounts": {
             'domain': 'slack.com',
