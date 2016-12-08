@@ -18,17 +18,19 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token",
+                    required: true
                 },
                 {
                     name: "test",
                     type: "Number",
                     info: "Setting this parameter to 1 triggers a testing mode where the specified token will not actually be revoked.",
+                    required: false,
                 },
             ],
             'callbacks':[
                 {
-                    'name':'error',
+                    'name': 'error',
                     'info': 'Error'
                 },
                 {
@@ -43,7 +45,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -52,7 +55,7 @@ module.exports.do = function(req, res){
                     'info': 'Error'
                 },
                 {
-                    'name':'success',
+                    'name': 'success',
                     'info': 'Success'
                 }
             ]
@@ -63,12 +66,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token",
+                    info: "Required: Authentication token",
+                    required: true
                 },
                 {
                     name: "bot",
                     type: "String",
                     info: "Bot user to get info on.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -88,12 +93,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "excludeArchived",
                     type: "Number",
                     info: "Don't return archived channels.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -113,12 +120,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "name",
                     type: "String",
                     info: "Name of channel to create.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -138,12 +147,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to archive.",
+                    info: "Required: Channel to archive.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -163,37 +174,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to fetch.",
+                    info: "Required: Channel to fetch.",
+                    required: true
                 },
                 {
                     name: "latest",
                     type: "String",
                     info: "End of time range of messages to include in results.",
+                    required: false,
                 },
                 {
                     name: "oldest",
                     type: "String",
                     info: "Start of time range of messages to include in results.",
+                    required: false,
                 },
                 {
                     name: "inclusive",
                     type: "Number",
                     info: "Include messages with latest or oldest timestamp in results.",
+                    required: false,
                 },
                 {
                     name: "count",
                     type: "Number",
                     info: "Number of messages to return, between 1 and 1000.",
+                    required: false,
                 },
                 {
                     name: "unreads",
                     type: "String",
                     info: "Include unread_count_display in the output?",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -213,12 +231,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to get info on.",
+                    info: "Required: Channel to get info on.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -238,17 +258,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to get info on.",
+                    info: "Required: Channel to get info on.",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
-                    info: "User to invite to channel.",
+                    info: "Required: User to invite to channel.",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -268,12 +291,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "name",
                     type: "String",
-                    info: "Name of channel to join.",
+                    info: "Required: Name of channel to join.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -293,17 +318,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to remove user from.",
+                    info: "Required: Channel to remove user from.",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
-                    info: "User to remove from channel.",
+                    info: "Required: User to remove from channel.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -323,12 +351,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to leave.",
+                    info: "Required: Channel to leave.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -348,17 +378,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to set reading cursor in.",
+                    info: "Required: Channel to set reading cursor in.",
+                    required: true
                 },
                 {
                     name: "timestamp",
                     type: "String",
-                    info: "Timestamp of the most recently seen message.",
+                    info: "Required: Timestamp of the most recently seen message.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -378,17 +411,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to set reading cursor in.",
+                    info: "Required: Channel to set reading cursor in.",
+                    required: true
                 },
                 {
                     name: "name",
                     type: "String",
-                    info: "New name for channel.",
+                    info: "Required: New name for channel.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -408,17 +444,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to set reading cursor in.",
+                    info: "Required: Channel to set reading cursor in.",
+                    required: true
                 },
                 {
                     name: "purpose",
                     type: "String",
-                    info: "The new purpose.",
+                    info: "Required: The new purpose.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -438,17 +477,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to set reading cursor in.",
+                    info: "Required: Channel to set reading cursor in.",
+                    required: true
                 },
                 {
                     name: "topic",
                     type: "String",
-                    info: "The new topic.",
+                    info: "Required: The new topic.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -468,12 +510,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to unarchive.",
+                    info: "Required: Channel to unarchive.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -493,12 +537,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "excludeArchived",
                     type: "Number",
                     info: "Don't return archived PrivateChannels.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -518,12 +564,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "name",
                     type: "String",
-                    info: "Name of PrivateChannel to create.",
+                    info: "Required: Name of PrivateChannel to create.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -543,12 +591,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to archive.",
+                    info: "Required: PrivateChannel to archive.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -568,37 +618,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Private Channel to fetch.",
+                    info: "Required: Private Channel to fetch.",
+                    required: true
                 },
                 {
                     name: "latest",
                     type: "String",
                     info: "End of time range of messages to include in results.",
+                    required: false,
                 },
                 {
                     name: "oldest",
                     type: "String",
                     info: "Start of time range of messages to include in results.",
+                    required: false,
                 },
                 {
                     name: "inclusive",
                     type: "Number",
                     info: "Include messages with latest or oldest timestamp in results.",
+                    required: false,
                 },
                 {
                     name: "count",
                     type: "Number",
                     info: "Number of messages to return, between 1 and 1000.",
+                    required: false,
                 },
                 {
                     name: "unreads",
                     type: "String",
                     info: "Include unread_count_display in the output?",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -618,12 +675,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to get info on.",
+                    info: "Required: PrivateChannel to get info on.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -643,17 +702,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to get info on.",
+                    info: "Required: PrivateChannel to get info on.",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
-                    info: "User to invite to PrivateChannel.",
+                    info: "Required: User to invite to PrivateChannel.",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -673,17 +735,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to remove user from.",
+                    info: "Required: PrivateChannel to remove user from.",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
-                    info: "User to remove from PrivateChannel.",
+                    info: "Required: User to remove from PrivateChannel.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -703,12 +768,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to leave.",
+                    info: "Required: PrivateChannel to leave.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -728,17 +795,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to set reading cursor in.",
+                    info: "Required: PrivateChannel to set reading cursor in.",
+                    required: true
                 },
                 {
                     name: "timestamp",
                     type: "String",
-                    info: "Timestamp of the most recently seen message.",
+                    info: "Required: Timestamp of the most recently seen message.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -758,17 +828,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to set reading cursor in.",
+                    info: "Required: PrivateChannel to set reading cursor in.",
+                    required: true
                 },
                 {
                     name: "name",
                     type: "String",
-                    info: "New name for PrivateChannel.",
+                    info: "Required: New name for PrivateChannel.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -788,17 +861,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to set reading cursor in.",
+                    info: "Required: PrivateChannel to set reading cursor in.",
+                    required: true
                 },
                 {
                     name: "purpose",
                     type: "String",
-                    info: "The new purpose.",
+                    info: "Required: The new purpose.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -818,17 +894,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to set reading cursor in.",
+                    info: "Required: PrivateChannel to set reading cursor in.",
+                    required: true
                 },
                 {
                     name: "topic",
                     type: "String",
-                    info: "The new topic.",
+                    info: "Required: The new topic.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -848,12 +927,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to unarchive.",
+                    info: "Required: PrivateChannel to unarchive.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -873,12 +954,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to open.",
+                    info: "Required: PrivateChannel to open.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -898,12 +981,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "PrivateChannel to close.",
+                    info: "Required: PrivateChannel to close.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -923,12 +1008,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Direct Message Channel to close.",
+                    info: "Required: Direct Message Channel to close.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -948,37 +1035,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: im:history)",
+                    info: "Required: Authentication token (Requires scope: im:history)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to fetch.",
+                    info: "Required: Channel to fetch.",
+                    required: true
                 },
                 {
                     name: "latest",
                     type: "String",
                     info: "End of time range of messages to include in results.",
+                    required: false,
                 },
                 {
                     name: "oldest",
                     type: "String",
                     info: "Start of time range of messages to include in results.",
+                    required: false,
                 },
                 {
                     name: "inclusive",
                     type: "Number",
                     info: "Include messages with latest or oldest timestamp in results.",
+                    required: false,
                 },
                 {
                     name: "count",
                     type: "Number",
                     info: "Number of messages to return, between 1 and 1000.",
+                    required: false,
                 },
                 {
                     name: "unreads",
                     type: "String",
                     info: "Include unread_count_display in the output?",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -998,7 +1092,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: im:history)",
+                    info: "Required: Authentication token (Requires scope: im:history)",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -1018,17 +1113,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: im:write)",
+                    info: "Required: Authentication token (Requires scope: im:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to set reading cursor in.",
+                    info: "Required: Channel to set reading cursor in.",
+                    required: true
                 },
                 {
                     name: "timestamp",
                     type: "String",
-                    info: "Timestamp of the most recently seen message.",
+                    info: "Required: Timestamp of the most recently seen message.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1048,17 +1146,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: im:write)",
+                    info: "Required: Authentication token (Requires scope: im:write)",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
-                    info: "User to open a direct message channel with.",
+                    info: "Required: User to open a direct message channel with.",
+                    required: true
                 },
                 {
                     name: "returnIm",
                     type: "String",
                     info: "Boolean, indicates you want the full IM channel definition in the response.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -1078,22 +1179,26 @@ module.exports.do = function(req, res){
                 {
                     name: "clientId",
                     type: "String",
-                    info: "Issued when you created your application.",
+                    info: "Required: Issued when you created your application.",
+                    required: true
                 },
                 {
                     name: "clientSecret",
                     type: "String",
-                    info: "Issued when you created your application.",
+                    info: "Required: Issued when you created your application.",
+                    required: true
                 },
                 {
                     name: "code",
                     type: "String",
-                    info: "The code param returned via the OAuth callback.",
+                    info: "Required: The code param returned via the OAuth callback.",
+                    required: true
                 },
                 {
                     name: "redirectUri",
                     type: "String",
-                    info: "This must match the originally submitted URI (if one was sent).",
+                    info: "Required: This must match the originally submitted URI (if one was sent).",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -1113,12 +1218,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: mpim:write)",
+                    info: "Required: Authentication token (Requires scope: mpim:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Multiparty Direct Message Channel to close.",
+                    info: "Required: Multiparty Direct Message Channel to close.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1138,37 +1245,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: mpim:history)",
+                    info: "Required: Authentication token (Requires scope: mpim:history)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to fetch.",
+                    info: "Required: Channel to fetch.",
+                    required: true
                 },
                 {
                     name: "latest",
                     type: "String",
                     info: "End of time range of messages to include in results.",
+                    required: false,
                 },
                 {
                     name: "oldest",
                     type: "String",
                     info: "Start of time range of messages to include in results.",
+                    required: false,
                 },
                 {
                     name: "inclusive",
                     type: "Number",
                     info: "Include messages with latest or oldest timestamp in results.",
+                    required: false,
                 },
                 {
                     name: "count",
                     type: "Number",
                     info: "Number of messages to return, between 1 and 1000.",
+                    required: false,
                 },
                 {
                     name: "unreads",
                     type: "String",
                     info: "Include unread_count_display in the output?",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -1188,7 +1302,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: mpim:write)",
+                    info: "Required: Authentication token (Requires scope: mpim:write)",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1208,17 +1323,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: mpim:write)",
+                    info: "Required: Authentication token (Requires scope: mpim:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to set reading cursor in.",
+                    info: "Required: Channel to set reading cursor in.",
+                    required: true
                 },
                 {
                     name: "timestamp",
                     type: "String",
-                    info: "Timestamp of the most recently seen message.",
+                    info: "Required: Timestamp of the most recently seen message.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1238,22 +1356,26 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: chat:write:bot or chat:write:user)",
+                    info: "Required: Authentication token (Requires scope: chat:write:bot or chat:write:user)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel containing the message to be deleted.",
+                    info: "Required: Channel containing the message to be deleted.",
+                    required: true
                 },
                 {
                     name: "timestamp",
                     type: "String",
-                    info: "Timestamp of the message to be deleted.",
+                    info: "Required: Timestamp of the message to be deleted.",
+                    required: true
                 },
                 {
                     name: "asUser",
                     type: "String",
                     info: "Pass true to delete the message as the authed user. Bot users in this context are considered authed users.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -1273,12 +1395,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: channels:write)",
+                    info: "Required: Authentication token (Requires scope: channels:write)",
+                    required: true
                 },
                 {
                     name: "users",
                     type: "String",
-                    info: "Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned.",
+                    info: "Required: Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1298,17 +1422,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: chat:write:bot or chat:write:user)",
+                    info: "Required: Authentication token (Requires scope: chat:write:bot or chat:write:user)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel containing the message to be deleted.",
+                    info: "Required: Channel containing the message to be deleted.",
+                    required: true
                 },
                 {
                     name: "text",
                     type: "String",
-                    info: "Text of the message to send.",
+                    info: "Required: Text of the message to send.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1328,62 +1455,74 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: chat:write:bot or chat:write:user)",
+                    info: "Required: Authentication token (Requires scope: chat:write:bot or chat:write:user)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel containing the message to be deleted.",
+                    info: "Required: Channel containing the message to be deleted.",
+                    required: true
                 },
                 {
                     name: "text",
                     type: "String",
-                    info: "Text of the message to send.",
+                    info: "Required: Text of the message to send.",
+                    required: true
                 },
                 {
                     name: "parse",
                     type: "String",
                     info: "Change how messages are treated.",
+                    required: false,
                 },
                 {
                     name: "linkNames",
                     type: "String",
                     info: "Find and link channel names and usernames.",
+                    required: false,
                 },
                 {
                     name: "attachments",
                     type: "JSON",
                     info: "Structured message attachments.",
+                    required: false,
                 },
                 {
                     name: "unfurlLinks",
                     type: "String",
                     info: "Pass true to enable unfurling of primarily text-based content.",
+                    required: false,
                 },
                 {
                     name: "unfurlMedia",
                     type: "String",
                     info: "Pass false to disable unfurling of media content.",
+                    required: false,
                 },
                 {
                     name: "username",
                     type: "String",
                     info: "Set your bot's user name. Must be used in conjunction with as_user set to false, otherwise ignored.  See authorship below.",
+                    required: false,
                 },
                 {
                     name: "asUser",
                     type: "String",
                     info: "Pass true to post the message as the authed user, instead of as a bot. Defaults to false.",
+                    required: false,
                 },
                 {
                     name: "iconUrl",
                     type: "String",
                     info: "URL to an image to use as the icon for this message. Must be used in conjunction with as_user  set to false, otherwise ignored. ",
+                    required: false,
                 },
                 {
                     name: "iconEmoji",
                     type: "String",
                     info: "Emoji to use as the icon for this message. Overrides icon_url. Must be used in conjunction with as_user  set to false, otherwise ignored.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -1403,42 +1542,50 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: chat:write:bot or chat:write:user)",
+                    info: "Required: Authentication token (Requires scope: chat:write:bot or chat:write:user)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
                     info: "Channel containing the message to be deleted.",
+                    required: false,
                 },
                 {
                     name: "timestamp",
                     type: "String",
                     info: "Timestamp of the message to be updated.",
+                    required: false,
                 },
                 {
                     name: "text",
                     type: "String",
                     info: "Text of the message to send.",
+                    required: false,
                 },
                 {
                     name: "parse",
                     type: "String",
                     info: "Change how messages are treated.",
+                    required: false,
                 },
                 {
                     name: "linkNames",
                     type: "String",
                     info: "Find and link channel names and usernames.",
+                    required: false,
                 },
                 {
                     name: "attachments",
                     type: "JSON",
                     info: "Structured message attachments.",
+                    required: false,
                 },
                 {
                     name: "asUser",
                     type: "String",
                     info: "Pass true to post the message as the authed user, instead of as a bot. Defaults to false.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -1458,7 +1605,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: dnd:write)",
+                    info: "Required: Authentication token (Requires scope: dnd:write)",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -1478,7 +1626,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: dnd:write)",
+                    info: "Required: Authentication token (Requires scope: dnd:write)",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -1498,12 +1647,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: dnd:write)",
+                    info: "Required: Authentication token (Requires scope: dnd:write)",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
-                    info: "User to fetch status for (defaults to current user)",
+                    info: "Required: User to fetch status for (defaults to current user)",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -1523,12 +1674,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: dnd:write)",
+                    info: "Required: Authentication token (Requires scope: dnd:write)",
+                    required: true
                 },
                 {
                     name: "numMinutes",
                     type: "Number",
-                    info: "Number of minutes, from now, to snooze until.",
+                    info: "Required: Number of minutes, from now, to snooze until.",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -1548,12 +1701,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: dnd:read)",
+                    info: "Required: Authentication token (Requires scope: dnd:read)",
+                    required: true
                 },
                 {
                     name: "users",
                     type: "Number",
-                    info: "Comma-separated list of users to fetch Do Not Disturb status for.",
+                    info: "Required: Comma-separated list of users to fetch Do Not Disturb status for.",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -1573,7 +1728,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: emoji:read)",
+                    info: "Required: Authentication token (Requires scope: emoji:read)",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1593,22 +1749,26 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: files:write:user)",
+                    info: "Required: Authentication token (Requires scope: files:write:user)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
-                    info: "File to add a comment to.",
+                    info: "Required: File to add a comment to.",
+                    required: true
                 },
                 {
                     name: "comment",
                     type: "String",
-                    info: "Text of the comment to add.",
+                    info: "Required: Text of the comment to add.",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
                     info: "Channel id (encoded) of which location to associate with the new comment.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -1628,17 +1788,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: files:write:user)",
+                    info: "Required: Authentication token (Requires scope: files:write:user)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
-                    info: "File to delete a comment from.",
+                    info: "Required: File to delete a comment from.",
+                    required: true
                 },
                 {
                     name: "id",
                     type: "String",
-                    info: "The comment to delete.",
+                    info: "Required: The comment to delete.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1658,22 +1821,26 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: files:write:user)",
+                    info: "Required: Authentication token (Requires scope: files:write:user)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
-                    info: "File to update a comment from.",
+                    info: "Required: File to update a comment from.",
+                    required: true
                 },
                 {
                     name: "id",
                     type: "String",
-                    info: "The comment to update.",
+                    info: "Required: The comment to update.",
+                    required: true
                 },
                 {
                     name: "comment",
                     type: "String",
-                    info: "Text of the comment to edit.",
+                    info: "Required: Text of the comment to edit.",
+                    required: true
                 },
 
             ],
@@ -1694,12 +1861,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: files:write:user)",
+                    info: "Required: Authentication token (Requires scope: files:write:user)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
-                    info: "ID of file to delete.",
+                    info: "Required: ID of file to delete.",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -1719,37 +1888,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: files:write:user)",
+                    info: "Required: Authentication token (Requires scope: files:write:user)",
+                    required: true
                 },
                 {
                     name: "file",
-                    type: "String",
-                    info: "File contents via multipart/form-data.",
+                    type: "File",
+                    info: "Required: File contents.",
+                    required: true
                 },
                 {
                     name: "filetype",
                     type: "String",
                     info: "A file type identifier.",
+                    required: false,
                 },
                 {
                     name: "filename",
                     type: "String",
                     info: "Filename of file.",
+                    required: false,
                 },
                 {
                     name: "title",
                     type: "String",
                     info: "Title of file.",
+                    required: false,
                 },
                 {
                     name: "initialComment",
                     type: "String",
                     info: "Initial comment to add to file.",
+                    required: false,
                 },
                 {
                     name: "channels",
                     type: "String",
                     info: "Comma-separated list of channel names or IDs where the file will be shared.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -1769,22 +1945,26 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: files:read)",
+                    info: "Required: Authentication token (Requires scope: files:read)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
-                    info: "Specify a file by providing its ID.",
+                    info: "Required: Specify a file by providing its ID.",
+                    required: true
                 },
                 {
                     name: "count",
                     type: "String",
                     info: "Number of items to return per page.",
+                    required: false,
                 },
                 {
                     name: "page",
                     type: "String",
                     info: "Page number of results to return.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -1804,42 +1984,50 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: files:read)",
+                    info: "Required: Authentication token (Requires scope: files:read)",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
                     info: "Filter files created by a single user.",
+                    required: false,
                 },
                 {
                     name: "channel",
                     type: "String",
                     info: "Filter files appearing in a specific channel, indicated by its ID.",
+                    required: false,
                 },
                 {
                     name: "timestampFrom",
                     type: "String",
                     info: "Filter files created after this timestamp (inclusive).",
+                    required: false,
                 },
                 {
                     name: "timestampTo",
                     type: "String",
                     info: "Filter files created before this timestamp (inclusive).",
+                    required: false,
                 },
                 {
                     name: "types",
                     type: "String",
                     info: "Filter files by type: `all` - All files; `spaces` - Posts; `snippets` - Snippets; `images` - Image files; `gdocs` - Google docs; `zips` - Zip files; `pdfs` - PDF files. You can pass multiple values in the types argument like types=spaces,snippets.The default value is all, which does not filter the list.",
+                    required: false,
                 },
                 {
                     name: "count",
                     type: "String",
                     info: "Number of items to return per page.",
+                    required: false,
                 },
                 {
                     name: "page",
                     type: "String",
                     info: "Page number of results to return.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -1859,12 +2047,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: files:write:user)",
+                    info: "Required: Authentication token (Requires scope: files:write:user)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
-                    info: "File to revoke.",
+                    info: "Required: File to revoke.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1884,12 +2074,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: files:write:user)",
+                    info: "Required: Authentication token (Requires scope: files:write:user)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
-                    info: "File to revoke.",
+                    info: "Required: File to revoke.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1909,27 +2101,32 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: pins:write)",
+                    info: "Required: Authentication token (Requires scope: pins:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel to pin the item in.",
+                    info: "Required: Channel to pin the item in.",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
                     info: "File to pin.",
+                    required: false,
                 },
                 {
                     name: "fileComment",
                     type: "String",
                     info: "File comment to pin.",
+                    required: false,
                 },
                 {
                     name: "timestamp",
                     type: "String",
-                    info: " Timestamp of the message to pin.",
+                    info: "Timestamp of the message to pin.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -1949,12 +2146,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Requires scope: pins:read",
+                    info: "Required: Requires scope: pins:read",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
-                    info: "Channel fetch pins.",
+                    info: "Required: Channel fetch pins.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -1974,27 +2173,32 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: pins:write)",
+                    info: "Required: Authentication token (Requires scope: pins:write)",
+                    required: true
                 },
                 {
                     name: "channel",
                     type: "String",
                     info: "Channel to pin the item in.",
+                    required: false,
                 },
                 {
                     name: "file",
                     type: "String",
                     info: "File to un-pin.",
+                    required: false,
                 },
                 {
                     name: "fileComment",
                     type: "String",
                     info: "File comment to un-pin.",
+                    required: false,
                 },
                 {
                     name: "timestamp",
                     type: "String",
                     info: " Timestamp of the message to un-pin.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2014,32 +2218,38 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: pins:write)",
+                    info: "Required: Authentication token (Requires scope: pins:write)",
+                    required: true
                 },
                 {
                     name: "name",
                     type: "String",
-                    info: "Reaction (emoji) name.",
+                    info: "Required: Reaction (emoji) name.",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
                     info: "File to add reaction to.",
+                    required: false,
                 },
                 {
                     name: "fileComment",
                     type: "String",
                     info: "File comment to add reaction to.",
+                    required: false,
                 },
                 {
                     name: "channel",
                     type: "String",
                     info: "Channel where the message to add reaction to was posted.",
+                    required: false,
                 },
                 {
                     name: "timestamp",
                     type: "String",
                     info: "Timestamp of the message to add reaction to.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2059,32 +2269,38 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: pins:write)",
+                    info: "Required: Authentication token (Requires scope: pins:write)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
                     info: "File to get reaction to.",
+                    required: false,
                 },
                 {
                     name: "fileComment",
                     type: "String",
                     info: "File comment to get reaction to.",
+                    required: false,
                 },
                 {
                     name: "channel",
                     type: "String",
                     info: "Channel where the message to get reaction to was posted.",
+                    required: false,
                 },
                 {
                     name: "timestamp",
                     type: "String",
                     info: "Timestamp of the message to get reaction to.",
+                    required: false,
                 },
                 {
                     name: "full",
                     type: "String",
                     info: "If true always return the complete reaction list.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2104,27 +2320,32 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: pins:write)",
+                    info: "Required: Authentication token (Requires scope: pins:write)",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
                     info: "Show reactions made by this user. Defaults to the authed user.",
+                    required: false,
                 },
                 {
                     name: "full",
                     type: "String",
                     info: "If true always return the complete reaction list.",
+                    required: false,
                 },
                 {
                     name: "count",
                     type: "String",
                     info: "Number of items to return per page.",
+                    required: false,
                 },
                 {
                     name: "page",
                     type: "String",
                     info: "Page number of results to return.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2144,32 +2365,38 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: pins:write)",
+                    info: "Required: Authentication token (Requires scope: pins:write)",
+                    required: true
                 },
                 {
                     name: "name",
                     type: "String",
-                    info: "Reaction (emoji) name.",
+                    info: "Required: Reaction (emoji) name.",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
                     info: "File to remove reaction from.",
+                    required: false,
                 },
                 {
                     name: "fileComment",
                     type: "String",
                     info: "File comment to remove reaction from.",
+                    required: false,
                 },
                 {
                     name: "channel",
                     type: "String",
                     info: "Channel where the message to remove reaction from was posted.",
+                    required: false,
                 },
                 {
                     name: "timestamp",
                     type: "String",
                     info: "Timestamp of the message to remove reaction from.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2189,22 +2416,26 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: pins:write)",
+                    info: "Required: Authentication token (Requires scope: pins:write)",
+                    required: true
                 },
                 {
                     name: "simpleLatest",
                     type: "String",
                     info: "Return timestamp only for latest message object of each channel (improves performance).",
+                    required: false,
                 },
                 {
                     name: "noUnreads",
                     type: "String",
                     info: "Skip unread counts for each channel (improves performance).",
+                    required: false,
                 },
                 {
                     name: "mpimAware",
                     type: "String",
                     info: "Returns MPIMs to the client in the API response.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2224,37 +2455,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: pins:write)",
+                    info: "Required: Authentication token (Requires scope: pins:write)",
+                    required: true
                 },
                 {
                     name: "query",
                     type: "String",
-                    info: "Search query. May contains booleans, etc.",
+                    info: "Required: Search query. May contains booleans, etc.",
+                    required: true
                 },
                 {
                     name: "sort",
                     type: "String",
                     info: "Return matches sorted by either score or timestamp.",
+                    required: false,
                 },
                 {
                     name: "sortDir",
                     type: "String",
                     info: "Change sort direction to ascending (asc) or descending (desc).",
+                    required: false,
                 },
                 {
                     name: "highlight",
                     type: "Number",
                     info: "Pass a value of 1 to enable query highlight markers (see below).",
+                    required: false,
                 },
                 {
                     name: "count",
                     type: "String",
                     info: "Number of items to return per page.",
+                    required: false,
                 },
                 {
                     name: "page",
                     type: "String",
                     info: "Page number of results to return.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2274,27 +2512,32 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: starts:write)",
+                    info: "Required: Authentication token (Requires scope: starts:write)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
                     info: "File to add star to.",
+                    required: false,
                 },
                 {
                     name: "fileComment",
                     type: "String",
                     info: "File comment to add star to.",
+                    required: false,
                 },
                 {
                     name: "channel",
                     type: "String",
                     info: "Channel to add star to, or channel where the message to add star to was posted (used with timestamp).",
+                    required: false,
                 },
                 {
                     name: "timestamp",
                     type: "String",
                     info: "Timestamp of the message to add star to.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2314,17 +2557,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: starts:read)",
+                    info: "Required: Authentication token (Requires scope: starts:read)",
+                    required: true
                 },
                 {
                     name: "count",
                     type: "String",
                     info: "Number of items to return per page.",
+                    required: false,
                 },
                 {
                     name: "page",
                     type: "String",
                     info: "Page number of results to return.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2344,27 +2590,32 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: starts:write)",
+                    info: "Required: Authentication token (Requires scope: starts:write)",
+                    required: true
                 },
                 {
                     name: "file",
                     type: "String",
                     info: "File to remove star from.",
+                    required: false,
                 },
                 {
                     name: "fileComment",
                     type: "String",
                     info: "File comment to remove star from.",
+                    required: false,
                 },
                 {
                     name: "channel",
                     type: "String",
                     info: "Channel to remove star to, or channel where the message to remove star to was posted (used with timestamp).",
+                    required: false,
                 },
                 {
                     name: "timestamp",
                     type: "String",
                     info: "Timestamp of the message to remove star from.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2384,7 +2635,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: team:read)",
+                    info: "Required: Authentication token (Requires scope: team:read)",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -2404,12 +2656,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users.profile:read)",
+                    info: "Required: Authentication token (Requires scope: users.profile:read)",
+                    required: true
                 },
                 {
                     name: "visibility",
                     type: "String",
                     info: "Filter by visibility. (all)",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2429,17 +2683,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: admin).",
+                    info: "Required: Authentication token (Requires scope: admin).",
+                    required: true
                 },
                 {
                     name: "count",
                     type: "String",
                     info: "Number of items to return per page.",
+                    required: false,
                 },
                 {
                     name: "page",
                     type: "String",
                     info: "Page number of results to return.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2459,32 +2716,38 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope usergroups:write).",
+                    info: "Required: Authentication token (Requires scope usergroups:write).",
+                    required: true
                 },
                 {
                     name: "name",
                     type: "String",
-                    info: "A name for the User Group. Must be unique among User Groups.",
+                    info: "Required: A name for the User Group. Must be unique among User Groups.",
+                    required: true
                 },
                 {
                     name: "handle",
                     type: "String",
                     info: "A mention handle. Must be unique among channels, users and User Groups.",
+                    required: false,
                 },
                 {
                     name: "description",
                     type: "String",
                     info: "A short description of the User Group.",
+                    required: false,
                 },
                 {
                     name: "channels",
                     type: "String",
                     info: "A comma separated string of encoded channel IDs for which the User Group uses as a default.",
+                    required: false,
                 },
                 {
                     name: "includeCount",
                     type: "String",
                     info: "Include the number of users in each User Group.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2504,17 +2767,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: usergroups:write).",
+                    info: "Required: Authentication token (Requires scope: usergroups:write).",
+                    required: true
                 },
                 {
                     name: "usergroup",
                     type: "String",
-                    info: "The encoded ID of the User Group to disable.",
+                    info: "Required: The encoded ID of the User Group to disable.",
+                    required: true
                 },
                 {
                     name: "includeСount",
                     type: "String",
                     info: "Include the number of users in the User Group.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2534,17 +2800,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: usergroups:write).",
+                    info: "Required: Authentication token (Requires scope: usergroups:write).",
+                    required: true
                 },
                 {
                     name: "usergroup",
                     type: "String",
-                    info: "The encoded ID of the User Group to enable.",
+                    info: "Required: The encoded ID of the User Group to enable.",
+                    required: true
                 },
                 {
                     name: "includeСount",
                     type: "String",
                     info: "Include the number of users in the User Group.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2564,22 +2833,26 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: usergroups:read).",
+                    info: "Required: Authentication token (Requires scope: usergroups:read).",
+                    required: true
                 },
                 {
                     name: "includeDisabled",
                     type: "String",
                     info: "Include disabled User Groups.",
+                    required: false,
                 },
                 {
                     name: "includeСount",
                     type: "String",
                     info: "Include the number of users in each User Group.",
+                    required: false,
                 },
                 {
                     name: "includeUsers",
                     type: "String",
                     info: "Include the list of users for each User Group.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2599,37 +2872,44 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: usergroups:write).",
+                    info: "Required: Authentication token (Requires scope: usergroups:write).",
+                    required: true
                 },
                 {
                     name: "usergroup",
                     type: "String",
-                    info: "The encoded ID of the User Group to update.",
+                    info: "Required: The encoded ID of the User Group to update.",
+                    required: true
                 },
                 {
                     name: "name",
                     type: "String",
                     info: "A name for the User Group. Must be unique among User Groups.",
+                    required: false,
                 },
                 {
                     name: "handle",
                     type: "String",
                     info: "A mention handle. Must be unique among channels, users and User Groups.",
+                    required: false,
                 },
                 {
                     name: "description",
                     type: "String",
                     info: "A short description of the User Group.",
+                    required: false,
                 },
                 {
                     name: "channels",
                     type: "String",
                     info: "A comma separated string of encoded channel IDs for which the User Group uses as a default.",
+                    required: false,
                 },
                 {
                     name: "includeCount",
                     type: "String",
                     info: "Include the number of users in the User Group.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2649,17 +2929,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: usergroups:write).",
+                    info: "Required: Authentication token (Requires scope: usergroups:write).",
+                    required: true
                 },
                 {
                     name: "usergroup",
                     type: "String",
-                    info: "The encoded ID of the User Group to update.",
+                    info: "Required: The encoded ID of the User Group to update.",
+                    required: true
                 },
                 {
                     name: "includeDisabled",
                     type: "String",
                     info: "Include the number of users in the User Group.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2679,22 +2962,26 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: usergroups:write)",
+                    info: "Required: Authentication token (Requires scope: usergroups:write)",
+                    required: true
                 },
                 {
                     name: "usergroup",
                     type: "String",
-                    info: "The encoded ID of the User Group to update.",
+                    info: "Required: The encoded ID of the User Group to update.",
+                    required: true
                 },
                 {
                     name: "users",
                     type: "String",
                     info: "A comma separated string of encoded user IDs that represent the entire list of users for the User Group.",
+                    required: false,
                 },
                 {
                     name: "includeCount",
                     type: "Number",
                     info: "Include the number of users in the User Group.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2714,17 +3001,20 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users.profile:read)",
+                    info: "Required: Authentication token (Requires scope: users.profile:read)",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
-                    info: "User to retrieve profile info for.",
+                    info: "Required: User to retrieve profile info for.",
+                    required: true
                 },
                 {
                     name: "includeLabels",
                     type: "Number",
                     info: "Include labels for each ID in custom profile fields. (0)",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2744,27 +3034,32 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users.profile:write)",
+                    info: "Required: Authentication token (Requires scope: users.profile:write)",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
-                    info: "ID of user to change. This argument may only be specified by team admins on paid teams.",
+                    info: "Required: ID of user to change. This argument may only be specified by team admins on paid teams.",
+                    required: true
                 },
                 {
                     name: "profile",
                     type: "JSON",
                     info: "Collection of key:value pairs presented as a URL-encoded JSON hash.",
+                    required: false,
                 },
                 {
                     name: "name",
                     type: "String",
                     info: "Name of a single key to set. Usable only if profile is not passed.",
+                    required: false,
                 },
                 {
                     name: "value",
                     type: "String",
                     info: "Value to set a single key to. Usable only if profile is not passed.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2784,7 +3079,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users.profile:write)",
+                    info: "Required: Authentication token (Requires scope: users.profile:write)",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -2804,12 +3100,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users:read)",
+                    info: "Required: Authentication token (Requires scope: users:read)",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
-                    info: "User to get presence info on. Defaults to the authed user.",
+                    info: "Required: User to get presence info on. Defaults to the authed user.",
+                    required: true
                 },
             ],
             'callbacks':[
@@ -2829,7 +3127,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: identity.basic)",
+                    info: "Required: Authentication token (Requires scope: identity.basic)",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -2849,12 +3148,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users:read)",
+                    info: "Required: Authentication token (Requires scope: users:read)",
+                    required: true
                 },
                 {
                     name: "user",
                     type: "String",
-                    info: "User to get presence info on. Defaults to the authed user.",
+                    info: "Required: User to get presence info on. Defaults to the authed user.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -2874,12 +3175,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users:read)",
+                    info: "Required: Authentication token (Requires scope: users:read)",
+                    required: true
                 },
                 {
                     name: "presence",
                     type: "String",
                     info: "Whether to include presence data in the output.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2899,7 +3202,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users:write)",
+                    info: "Required: Authentication token (Requires scope: users:write)",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -2919,27 +3223,32 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users:write)",
+                    info: "Required: Authentication token (Requires scope: users:write)",
+                    required: true
                 },
                 {
                     name: "image",
-                    type: "String",
+                    type: "File",
                     info: "File contents.",
+                    required: false,
                 },
                 {
                     name: "cropX",
                     type: "Number",
                     info: "X coordinate of top-left corner of crop box.",
+                    required: false,
                 },
                 {
                     name: "cropY",
                     type: "Number",
                     info: "Y coordinate of top-left corner of crop box.",
+                    required: false,
                 },
                 {
                     name: "cropW",
                     type: "Number",
                     info: "Width/height of crop box (always square).",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -2959,12 +3268,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users:write)",
+                    info: "Required: Authentication token (Requires scope: users:write)",
+                    required: true
                 },
                 {
                     name: "presence",
                     type: "String",
                     info: "Either auto or away.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -2984,12 +3295,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users:write)",
+                    info: "Required: Authentication token (Requires scope: users:write)",
+                    required: true
                 },
                 {
                     name: "reminder",
                     type: "String",
                     info: "The ID of the reminder to be marked as complete.",
+                    required: false,
                 }
             ],
             'callbacks':[
@@ -3009,22 +3322,25 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: reminders:write)",
+                    info: "Required: Authentication token (Requires scope: reminders:write)",
+                    required: true
                 },
                 {
                     name: "text",
                     type: "String",
-                    info: "The content of the reminder.",
+                    info: "Required: The content of the reminder.",
+                    required: true
                 },
                 {
                     name: "time",
                     type: "String",
-                    info: 'When this reminder should happen: the Unix timestamp (up to five years from now), the number of seconds until the reminder (if within 24 hours), or a natural language description (Ex. "in 15 minutes," or "every Thursday")',
+                    info: 'Required: When this reminder should happen: the Unix timestamp (up to five years from now), the number of seconds until the reminder (if within 24 hours), or a natural language description (Ex. "in 15 minutes," or "every Thursday")',
                 },
                 {
                     name: "user",
                     type: "String",
                     info: "The user who will receive the reminder. If no user is specified, the reminder will go to user who created it.",
+                    required: false,
                 },
             ],
             'callbacks':[
@@ -3044,12 +3360,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users:write)",
+                    info: "Required: Authentication token (Requires scope: users:write)",
+                    required: true
                 },
                 {
                     name: "reminder",
                     type: "String",
-                    info: "The ID of the reminder to delete.",
+                    info: "Required: The ID of the reminder to delete.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -3069,12 +3387,14 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users:write)",
+                    info: "Required: Authentication token (Requires scope: users:write)",
+                    required: true
                 },
                 {
                     name: "reminder",
                     type: "String",
-                    info: "The ID of the reminder.",
+                    info: "Required: The ID of the reminder.",
+                    required: true
                 }
             ],
             'callbacks':[
@@ -3094,7 +3414,8 @@ module.exports.do = function(req, res){
                 {
                     name: "token",
                     type: "credentials",
-                    info: "Authentication token (Requires scope: users:read)",
+                    info: "Required: Authentication token (Requires scope: users:read)",
+                    required: true
                 }
             ],
             'callbacks':[
