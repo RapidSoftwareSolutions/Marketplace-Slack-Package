@@ -2,6 +2,7 @@ module.exports.do = function(req, res){
     res.status(200).send({
         'package': 'Slack',
         'tagline': "Slack API Package",
+        "keywords": ["API", "bot", "business", "chat", "chatbot", "collaborate", "group", "message", "messaging", "smb"],
         "description": "This block can be used alone or in conjunction with each other to build many different kinds of Slack apps.",
         'image': 'http://logo.clearbit.com/slack.com',
         'repo': 'https://github.com/RapidSoftwareSolutions/',
