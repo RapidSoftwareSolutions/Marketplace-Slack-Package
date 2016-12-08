@@ -23,7 +23,7 @@ module.exports.do = function(req, res){
                     required: true
                 },
                 {
-                    name: "test",
+                    name: "testMode",
                     type: "Number",
                     info: "Setting this parameter to 1 triggers a testing mode where the specified token will not actually be revoked.",
                     required: false,

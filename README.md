@@ -10,10 +10,10 @@ Slack oauth docomentation: [https://api.slack.com/docs/oauth](https://api.slack.
 ## Slack.revokeAuth
 This method revokes an access token. Use it when you no longer need a token. For example, with a Sign In With Slack app, call this to log a user out.
 
-| Field| Type       | Description
-|------|------------|----------
-| token| credentials| Authentication token
-| test | Number     | Setting this parameter to 1 triggers a testing mode where the specified token will not actually be revoked.
+| Field    | Type       | Description
+|----------|------------|----------
+| token    | credentials| Authentication token
+| testMode | Number     | Setting this parameter to 1 triggers a testing mode where the specified token will not actually be revoked.
 
 ## Slack.testAuth
 This method checks authentication and tells you who you are.

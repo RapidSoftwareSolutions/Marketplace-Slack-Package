@@ -4,10 +4,10 @@ const WebClient = require('@slack/client').WebClient;
 module.exports = (req, res) => {
     let {
         token,
-        test
+        testMode
     } = req.body.args;
 
     let slack = new WebClient(token || '');
 
-    return slack.auth.revoke();    
+    return slack.auth.revoke({test: testMode});    
 }
