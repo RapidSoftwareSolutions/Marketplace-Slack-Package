@@ -1207,4 +1207,26 @@ describe('Slack package', function() {
             done();
         });
     });
+
+    it('/outgoing', function (done) {
+        return request(app)
+            .post('/api/' + global.PACKAGE_NAME + '/outgoing')
+            .send({args: {
+                body: { token },
+                account: { token }
+            }})
+            .expect(200)
+            .then(data => done());
+    });
+
+    it('/slashCommand', function (done) {
+        return request(app)
+            .post('/api/' + global.PACKAGE_NAME + '/slashCommand')
+            .send({args: {
+                body: { token },
+                account: { token }
+            }})
+            .expect(200)
+            .then(data => done());
+    });    
 })

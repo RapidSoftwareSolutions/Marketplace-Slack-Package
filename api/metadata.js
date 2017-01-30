@@ -12,6 +12,51 @@ module.exports.do = function(req, res){
                 'token',
             ]
         },
+        'events': [
+            {
+                'name': 'slashCommand',
+                'description': 'This method is called every time a user posts a slash command in a channel',
+                'payload': {
+                    'token': 'ABc123dEF456G',
+                    'team_id': 'T123',
+                    'team_domain': 'domain',
+                    'channel_id': 'C123456',
+                    'channel_name': 'channel',
+                    'user_id': 'U12345',
+                    'user_name': 'Name',
+                    'command': '/command',
+                    'text': '12312',
+                    'response_url': 'https://hooks.slack.com/commands/1234/5678'
+                },
+                'steps': [
+                    "Navigate to https://rapidapi.slack.com/apps/manage/custom-integrations and click 'Slash Commands'",
+                    "Click 'Add Configuration' and enter the command you would like to receive notifications for",
+                    "Under 'Intergration Settings', the URL option, input the following URL: __WEBHOOK_URL__"
+                ]
+            },
+            {
+                'name': 'outgoing',
+                'description': 'This method is called every time a user posts a message on a channel',
+                'payload': {
+                    'token': 'ABc123dEF456G',
+                    'team_id': 'T123',
+                    'team_domain': 'domain',
+                    'channel_id': 'C123456',
+                    'channel_name': 'channel',
+                    'timestamp': '1122334455.000006',
+                    'user_id': 'U12345',
+                    'user_name': 'Name',
+                    'text': 'The text sent by the user',
+                    'trigger_word': 'the_trigger_word'
+                },
+                'steps': [
+                    "Navigate to https://rapidapi.slack.com/apps/manage/custom-integrations and click 'Outgoing Webhooks'",
+                    "Click 'Add Configuration' and then click 'Add Outgoing WebHooks integration'",
+                    "Under 'Integration Settings': Select a channel to listen on (or 'Any' to listen on all channels) and a trigger word to trigger an event (or leave blank for all messages)",
+                    "Set the URL to the following URL: __WEBHOOK_URL__"
+                ]
+            }
+        ],
         'blocks': [{
             "name":"revokeAuth",
             "description": "This method revokes an access token. Use it when you no longer need a token. For example, with a Sign In With Slack app, call this to log a user out.",
