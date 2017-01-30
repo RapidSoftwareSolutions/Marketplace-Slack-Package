@@ -28,7 +28,7 @@ for(let route in API) {
         try {
             response            = yield API[route](req, res);
             r.callback          = 'success';
-            r.contextWrites[to] = JSON.stringify(response);
+            r.contextWrites[to] = response;
         } catch(e) {
             r.callback          = 'error';
             r.contextWrites[to] =  e.name == 'SlackAPIError' ? lib.errors[e.message] || lib.parseError(e.message) : e.message;
