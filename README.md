@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Slack/functions?utm_source=RapidAPIGitHub_SlackFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # Slack Package
 This block can be used alone or in conjunction with each other to build many different kinds of Slack apps.
 * Domain: slack.com
