@@ -36,9 +36,9 @@ module.exports.do = function(req, res){
                 'args': [
                     {
                         'name': 'token',
-                        'type': 'credentials',
+                        'type': 'string',
                         'info': 'Authentication token',
-                        'required': false
+                        'required': true
                     },
                 ]
             },
