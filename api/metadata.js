@@ -32,6 +32,14 @@ module.exports.do = function(req, res){
                     "Navigate to https://rapidapi.slack.com/apps/manage/custom-integrations and click 'Slash Commands'",
                     "Click 'Add Configuration' and enter the command you would like to receive notifications for",
                     "Under 'Intergration Settings', the URL option, input the following URL: __WEBHOOK_URL__"
+                ],
+                'args': [
+                    {
+                        'name': 'token',
+                        'type': 'string',
+                        'info': 'Authentication token',
+                        'required': true
+                    },
                 ]
             },
             {
@@ -54,6 +62,14 @@ module.exports.do = function(req, res){
                     "Click 'Add Configuration' and then click 'Add Outgoing WebHooks integration'",
                     "Under 'Integration Settings': Select a channel to listen on (or 'Any' to listen on all channels) and a trigger word to trigger an event (or leave blank for all messages)",
                     "Set the URL to the following URL: __WEBHOOK_URL__"
+                ],
+                'args': [
+                    {
+                        'name': 'token',
+                        'type': 'string',
+                        'info': 'Authentication token',
+                        'required': true
+                    },
                 ]
             }
         ],
