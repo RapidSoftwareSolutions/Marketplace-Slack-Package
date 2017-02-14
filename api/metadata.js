@@ -40,6 +40,12 @@ module.exports.do = function(req, res){
                         'info': 'Authentication token',
                         'required': true
                     },
+                    {
+                        'name': 'command',
+                        'type': 'string',
+                        'info': 'Slash command',
+                        'required': true
+                    },
                 ]
             },
             {
