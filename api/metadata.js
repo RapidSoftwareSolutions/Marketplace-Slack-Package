@@ -76,6 +76,12 @@ module.exports.do = function(req, res){
                         'info': 'Authentication token',
                         'required': true
                     },
+                    {
+                        'name': 'channelName',
+                        'type': 'string',
+                        'info': 'Name of the channel',
+                        'required': true
+                    }
                 ]
             }
         ],
