@@ -29,7 +29,7 @@ module.exports.do = function(req, res){
                     'response_url': 'https://hooks.slack.com/commands/1234/5678'
                 },
                 'steps': [
-                    "Navigate to https://rapidapi.slack.com/apps/manage/custom-integrations and click 'Slash Commands'",
+                    "Navigate to https://slack.com/apps/manage/custom-integrations and click 'Slash Commands'",
                     "Click 'Add Configuration' and enter the command you would like to receive notifications for",
                     "Under 'Intergration Settings', the URL option, input the following URL: __WEBHOOK_URL__"
                 ],
