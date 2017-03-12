@@ -46,6 +46,13 @@ module.exports.do = function(req, res){
                         'info': 'Slash command',
                         'required': true
                     },
+                    {
+                        "name": "response",
+                        "type": "String",
+                        "info": "Text to reply to the user in chat.",
+                        "required": false,
+                    }
+
                 ]
             },
             {
