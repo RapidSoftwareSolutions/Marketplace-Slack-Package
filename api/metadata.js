@@ -71,7 +71,7 @@ module.exports.do = function(req, res){
                     'trigger_word': 'the_trigger_word'
                 },
                 'steps': [
-                    "Navigate to https://rapidapi.slack.com/apps/manage/custom-integrations and click 'Outgoing Webhooks'",
+                    "Navigate to https://slack.com/apps/manage/custom-integrations and click 'Outgoing Webhooks'",
                     "Click 'Add Configuration' and then click 'Add Outgoing WebHooks integration'",
                     "Under 'Integration Settings': Select a channel to listen on (or 'Any' to listen on all channels) and a trigger word to trigger an event (or leave blank for all messages)",
                     "Set the URL to the following URL: __WEBHOOK_URL__"
@@ -88,6 +88,12 @@ module.exports.do = function(req, res){
                         'type': 'string',
                         'info': 'Name of the channel',
                         'required': true
+                    },
+                    {
+                        "name": "response",
+                        "type": "String",
+                        "info": "Text to reply to the user in chat.",
+                        "required": false
                     }
                 ]
             }
