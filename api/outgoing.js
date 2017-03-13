@@ -9,7 +9,7 @@ module.exports = (req, res) => {
     if (!found) throw new Error('Mismatching tokens');
 
     const resp = {
-        http_resp: '',
+        http_resp: {"text": found.response},
         client_msg: body,
         socket_token: found._rapid_sock_token
     }
