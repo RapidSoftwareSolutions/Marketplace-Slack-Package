@@ -5,13 +5,13 @@ module.exports = (req, res) => {
         body, params
     } = req.body.args;
 
-    const found = params.find(param => param.token === body.token && param.command === body.command);
-    if (!found) throw new Error("Mismatching tokens");
+    const found = params.filter(param => param.token === body.token && param.command === body.command);
+    if (!found.length) throw new Error("Mismatching tokens");
 
     const resp = {
-        http_resp: found.response || body.text,
+        http_resp: found[0].response || body.text,
         client_msg: body,
-        socket_token: found._rapid_sock_token
+        params: found
     };
 
     return resp;
