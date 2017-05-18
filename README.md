@@ -6,8 +6,11 @@ This block can be used alone or in conjunction with each other to build many dif
 * Credentials: token
 
 ## How to get credentials: 
-Test oauth token: [https://api.slack.com/docs/oauth-test-tokens](https://api.slack.com/docs/oauth-test-tokens)
-Slack oauth docomentation: [https://api.slack.com/docs/oauth](https://api.slack.com/docs/oauth)
+
+1. Create a Slack app at the [app creation page](https://api.slack.com/apps?new_app=1)
+2. Choose what type of permissions your app needs by clicking the OAuth & Permissions tab on the left hand menu and scrolling down to choose. This will decided what scope or access your authentication token will have. If you try and call an API that you're not authorized to use you will receive a status 500 response that looks like:
+![](https://storage.googleapis.com/rapid-misc-files/slack-missing-scope-response.png)
+3. Finally scroll to the top of the page OAuth & Permissions and install your app. You should now see your authentication token.
 
 ## Slack.revokeAuth
 This method revokes an access token. Use it when you no longer need a token. For example, with a Sign In With Slack app, call this to log a user out.
