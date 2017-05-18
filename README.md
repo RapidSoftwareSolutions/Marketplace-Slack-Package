@@ -9,7 +9,9 @@ This block can be used alone or in conjunction with each other to build many dif
 
 1. Create a Slack app at the [app creation page](https://api.slack.com/apps?new_app=1)
 2. Choose what type of permissions your app needs by clicking the OAuth & Permissions tab on the left hand menu and scrolling down to choose. This will decided what scope or access your authentication token will have. If you try and call an API that you're not authorized to use you will receive a status 500 response that looks like:
+
 ![](https://storage.googleapis.com/rapid-misc-files/slack-missing-scope-response.png)
+
 3. Finally scroll to the top of the page OAuth & Permissions and install your app. You should now see your authentication token.
 
 ## Slack.revokeAuth
