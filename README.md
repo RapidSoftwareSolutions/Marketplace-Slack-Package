@@ -14,6 +14,15 @@ This block can be used alone or in conjunction with each other to build many dif
 
 3. Finally scroll to the top of the page OAuth & Permissions and install your app. You should now see your authentication token.
 
+## Custom datatypes:
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]```
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+
 ## Slack.revokeAuth
 This method revokes an access token. Use it when you no longer need a token. For example, with a Sign In With Slack app, call this to log a user out.
 
@@ -68,8 +77,8 @@ This method returns a portion of message events from the specified channel.
 |----------|------------|----------
 | token    | credentials| Authentication token (Requires scope: channels:write)
 | channel  | String     | Channel to fetch.
-| latest   | String     | End of time range of messages to include in results.
-| oldest   | String     | Start of time range of messages to include in results.
+| latest   | DatePicker     | End of time range of messages to include in results.
+| oldest   | DatePicker     | Start of time range of messages to include in results.
 | inclusive| Number     | Include messages with latest or oldest timestamp in results.
 | count    | Number     | Number of messages to return, between 1 and 1000.
 | unreads  | String     | Include unread_count_display in the output?
@@ -123,7 +132,7 @@ This method moves the read cursor in a channel.
 |----------|------------|----------
 | token    | credentials| Authentication token (Requires scope: channels:write)
 | channel  | String     | Channel to set reading cursor in.
-| timestamp| String     | Timestamp of the most recently seen message.
+| timestamp| DatePicker     | Timestamp of the most recently seen message.
 
 ## Slack.renameChannel
 This method renames a team channel.
@@ -191,8 +200,8 @@ This method returns a portion of messages/events from the specified private chan
 |----------|------------|----------
 | token    | credentials| Authentication token (Requires scope: channels:write)
 | channel  | String     | Private Channel to fetch.
-| latest   | String     | End of time range of messages to include in results.
-| oldest   | String     | Start of time range of messages to include in results.
+| latest   | DatePicker     | End of time range of messages to include in results.
+| oldest   | DatePicker     | Start of time range of messages to include in results.
 | inclusive| Number     | Include messages with latest or oldest timestamp in results.
 | count    | Number     | Number of messages to return, between 1 and 1000.
 | unreads  | String     | Include unread_count_display in the output?
@@ -238,7 +247,7 @@ This method moves the read cursor in a private channel.
 |----------|------------|----------
 | token    | credentials| Authentication token (Requires scope: channels:write)
 | channel  | String     | PrivateChannel to set reading cursor in.
-| timestamp| String     | Timestamp of the most recently seen message.
+| timestamp| DatePicker     | Timestamp of the most recently seen message.
 
 ## Slack.renamePrivateChannel
 This method renames a private channel.
@@ -306,8 +315,8 @@ This method returns a portion of messages/events from the specified direct messa
 |----------|------------|----------
 | token    | credentials| Authentication token (Requires scope: im:history)
 | channel  | String     | Channel to fetch.
-| latest   | String     | End of time range of messages to include in results.
-| oldest   | String     | Start of time range of messages to include in results.
+| latest   | DatePicker     | End of time range of messages to include in results.
+| oldest   | DatePicker     | Start of time range of messages to include in results.
 | inclusive| Number     | Include messages with latest or oldest timestamp in results.
 | count    | Number     | Number of messages to return, between 1 and 1000.
 | unreads  | String     | Include unread_count_display in the output?
@@ -326,7 +335,7 @@ This method moves the read cursor in a direct message channel.
 |----------|------------|----------
 | token    | credentials| Authentication token (Requires scope: im:write)
 | channel  | String     | Channel to set reading cursor in.
-| timestamp| String     | Timestamp of the most recently seen message.
+| timestamp| DatePicker     | Timestamp of the most recently seen message.
 
 ## Slack.openDirectMessageChannel
 This method opens a direct message channel with another member of your Slack team.
@@ -362,8 +371,8 @@ This method returns a portion of messages/events from the specified multiparty d
 |----------|------------|----------
 | token    | credentials| Authentication token (Requires scope: mpim:history)
 | channel  | String     | Channel to fetch.
-| latest   | String     | End of time range of messages to include in results.
-| oldest   | String     | Start of time range of messages to include in results.
+| latest   | DatePicker     | End of time range of messages to include in results.
+| oldest   | DatePicker     | Start of time range of messages to include in results.
 | inclusive| Number     | Include messages with latest or oldest timestamp in results.
 | count    | Number     | Number of messages to return, between 1 and 1000.
 | unreads  | String     | Include unread_count_display in the output?
@@ -382,7 +391,7 @@ This method moves the read cursor in a multiparty direct message channel.
 |----------|------------|----------
 | token    | credentials| Authentication token (Requires scope: mpim:write)
 | channel  | String     | Channel to set reading cursor in.
-| timestamp| String     | Timestamp of the most recently seen message.
+| timestamp| DatePicker     | Timestamp of the most recently seen message.
 
 ## Slack.deleteChat
 This method deletes a message from a channel.
@@ -391,7 +400,7 @@ This method deletes a message from a channel.
 |----------|------------|----------
 | token    | credentials| Authentication token (Requires scope: chat:write:bot or chat:write:user)
 | channel  | String     | Channel containing the message to be deleted.
-| timestamp| String     | Timestamp of the message to be deleted.
+| timestamp| DatePicker     | Timestamp of the message to be deleted.
 | asUser   | String     | Pass true to delete the message as the authed user. Bot users in this context are considered authed users.
 
 ## Slack.openMultipartyDirectMessageChannel
@@ -436,7 +445,7 @@ This method updates a message in a channel. Though related to chat.postMessage, 
 |------------|------------|----------
 | token      | credentials| Authentication token (Requires scope: chat:write:bot or chat:write:user)
 | channel    | String     | Channel containing the message to be deleted.
-| timestamp  | String     | Timestamp of the message to be updated.
+| timestamp  | DatePicker     | Timestamp of the message to be updated.
 | text       | String     | Text of the message to send.
 | parse      | String     | Change how messages are treated.
 | linkNames  | String     | Find and link channel names and usernames.
@@ -558,7 +567,7 @@ This method returns a list of files within the team. It can be filtered and slic
 | channel      | String     | Filter files appearing in a specific channel, indicated by its ID.
 | timestampFrom| String     | Filter files created after this timestamp (inclusive).
 | timestampTo  | String     | Filter files created before this timestamp (inclusive).
-| types        | String     | Filter files by type: `all` - All files; `spaces` - Posts; `snippets` - Snippets; `images` - Image files; `gdocs` - Google docs; `zips` - Zip files; `pdfs` - PDF files. You can pass multiple values in the types argument like types=spaces,snippets.The default value is all, which does not filter the list.
+| types        | Select     | Filter files by type: `all` - All files; `spaces` - Posts; `snippets` - Snippets; `images` - Image files; `gdocs` - Google docs; `zips` - Zip files; `pdfs` - PDF files. You can pass multiple values in the types argument like types=spaces,snippets.The default value is all, which does not filter the list.
 | count        | String     | Number of items to return per page.
 | page         | String     | Page number of results to return.
 
@@ -595,7 +604,7 @@ This method pins an item (file, file comment, channel message, or group message)
 | channel    | String     | Channel to pin the item in.
 | file       | String     | File to pin.
 | fileComment| String     | File comment to pin.
-| timestamp  | String     |  Timestamp of the message to pin.
+| timestamp  | DatePicker     |  Timestamp of the message to pin.
 
 ## Slack.getChannelPinnedItems
 This method lists the items pinned to a channel.
@@ -614,7 +623,7 @@ This method un-pins an item (file, file comment, channel message, or group messa
 | channel    | String     | Channel to pin the item in.
 | file       | String     | File to un-pin.
 | fileComment| String     | File comment to un-pin.
-| timestamp  | String     |  Timestamp of the message to un-pin.
+| timestamp  | DatePicker     |  Timestamp of the message to un-pin.
 
 ## Slack.addReaction
 This method adds a reaction (emoji) to an item (file, file comment, channel message, group message, or direct message). One of file, file_comment, or the combination of channel and timestamp must be specified.
@@ -626,7 +635,7 @@ This method adds a reaction (emoji) to an item (file, file comment, channel mess
 | file       | String     | File to add reaction to.
 | fileComment| String     | File comment to add reaction to.
 | channel    | String     | Channel where the message to add reaction to was posted.
-| timestamp  | String     | Timestamp of the message to add reaction to.
+| timestamp  | DatePicker     | Timestamp of the message to add reaction to.
 
 ## Slack.getReaction
 This method returns a list of all reactions for a single item (file, file comment, channel message, group message, or direct message).
@@ -637,7 +646,7 @@ This method returns a list of all reactions for a single item (file, file commen
 | file       | String     | File to get reaction to.
 | fileComment| String     | File comment to get reaction to.
 | channel    | String     | Channel where the message to get reaction to was posted.
-| timestamp  | String     | Timestamp of the message to get reaction to.
+| timestamp  | DatePicker     | Timestamp of the message to get reaction to.
 | full       | String     | If true always return the complete reaction list.
 
 ## Slack.getReactions
@@ -661,7 +670,7 @@ This method removes a reaction (emoji) from an item (file, file comment, channel
 | file       | String     | File to remove reaction from.
 | fileComment| String     | File comment to remove reaction from.
 | channel    | String     | Channel where the message to remove reaction from was posted.
-| timestamp  | String     | Timestamp of the message to remove reaction from.
+| timestamp  | DatePicker     | Timestamp of the message to remove reaction from.
 
 ## Slack.startRealTimeMessaging
 This method starts a Real Time Messaging API session. Refer to the RTM API documentation for full details on how to use the RTM API.

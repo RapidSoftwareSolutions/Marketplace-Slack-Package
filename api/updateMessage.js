@@ -1,6 +1,6 @@
 const lib       = require('../lib/functions');
 const WebClient = require('@slack/client').WebClient;
-
+const    datetime = require('node-datetime');
 module.exports = (req, res) => {
     let {
         token,
@@ -12,6 +12,11 @@ module.exports = (req, res) => {
         attachments,
         asUser
     } = req.body.args;
+
+    if(isNaN(timestamp)){
+        var dt = datetime.create(timestamp);
+        timestamp = dt.epoch();
+    }
 
     if(!token || !channel) throw new Error('Required fields: token, channel, text');
 

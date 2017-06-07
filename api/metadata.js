@@ -272,13 +272,13 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "latest",
-                    type: "String",
+                    type: "DatePicker",
                     info: "End of time range of messages to include in results.",
                     required: false,
                 },
                 {
                     name: "oldest",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Start of time range of messages to include in results.",
                     required: false,
                 },
@@ -476,7 +476,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Required: Timestamp of the most recently seen message.",
                     required: true
                 }
@@ -716,13 +716,13 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "latest",
-                    type: "String",
+                    type: "DatePicker",
                     info: "End of time range of messages to include in results.",
                     required: false,
                 },
                 {
                     name: "oldest",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Start of time range of messages to include in results.",
                     required: false,
                 },
@@ -893,7 +893,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Required: Timestamp of the most recently seen message.",
                     required: true
                 }
@@ -1133,13 +1133,13 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "latest",
-                    type: "String",
+                    type: "DatePicker",
                     info: "End of time range of messages to include in results.",
                     required: false,
                 },
                 {
                     name: "oldest",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Start of time range of messages to include in results.",
                     required: false,
                 },
@@ -1211,7 +1211,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Required: Timestamp of the most recently seen message.",
                     required: true
                 }
@@ -1343,13 +1343,13 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "latest",
-                    type: "String",
+                    type: "DatePicker",
                     info: "End of time range of messages to include in results.",
                     required: false,
                 },
                 {
                     name: "oldest",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Start of time range of messages to include in results.",
                     required: false,
                 },
@@ -1421,7 +1421,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Required: Timestamp of the most recently seen message.",
                     required: true
                 }
@@ -1454,7 +1454,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Required: Timestamp of the message to be deleted.",
                     required: true
                 },
@@ -1640,7 +1640,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Timestamp of the message to be updated.",
                     required: false,
                 },
@@ -2100,7 +2100,8 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "types",
-                    type: "String",
+                    type: "Select",
+                    options: ["all","spaces","snippets","images","gdocs","zips","pdfs"],
                     info: "Filter files by type: `all` - All files; `spaces` - Posts; `snippets` - Snippets; `images` - Image files; `gdocs` - Google docs; `zips` - Zip files; `pdfs` - PDF files. You can pass multiple values in the types argument like types=spaces,snippets.The default value is all, which does not filter the list.",
                     required: false,
                 },
@@ -2211,7 +2212,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Timestamp of the message to pin.",
                     required: false,
                 }
@@ -2283,7 +2284,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: " Timestamp of the message to un-pin.",
                     required: false,
                 }
@@ -2334,7 +2335,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Timestamp of the message to add reaction to.",
                     required: false,
                 }
@@ -2379,7 +2380,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Timestamp of the message to get reaction to.",
                     required: false,
                 },
@@ -2481,7 +2482,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Timestamp of the message to remove reaction from.",
                     required: false,
                 }
@@ -2622,7 +2623,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Timestamp of the message to add star to.",
                     required: false,
                 }
@@ -2700,7 +2701,7 @@ module.exports.do = function(req, res){
                 },
                 {
                     name: "timestamp",
-                    type: "String",
+                    type: "DatePicker",
                     info: "Timestamp of the message to remove star from.",
                     required: false,
                 }
