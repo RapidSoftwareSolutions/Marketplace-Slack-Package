@@ -25,7 +25,7 @@ module.exports = (req, res) => {
     if(oldest!=undefined){
         if(isNaN(oldest)){
             var dt = datetime.create(oldest);
-            latest = dt.epoch();
+            oldest = dt.epoch();
         }
     }
 
