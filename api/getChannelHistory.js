@@ -15,18 +15,14 @@ module.exports = (req, res) => {
 
     if(!token || !channel) throw new Error('Required fields: token, channel');
 
-    if(latest!=undefined){
-        if(isNaN(latest)){
-            var dt = datetime.create(latest);
-            latest = dt.epoch();
-        }
+    if(latest!=undefined && isNaN(latest)){
+        var dt = datetime.create(latest);
+        latest = dt.epoch();
     }
 
-    if(oldest!=undefined){
-        if(isNaN(oldest)){
-            var dt = datetime.create(oldest);
-            oldest = dt.epoch();
-        }
+    if(oldest!=undefined && isNaN(oldest)){
+        var dt = datetime.create(oldest);
+        oldest = dt.epoch();
     }
 
     let slack = new WebClient(token);
