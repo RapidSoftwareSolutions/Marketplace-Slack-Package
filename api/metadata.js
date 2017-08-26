@@ -12,6 +12,10 @@ module.exports.do = function(req, res){
                 'token',
             ]
         },
+        'steps' : [
+                    "Go to https://api.slack.com/docs/oauth-test-tokens",
+                    "Request or create a token for your Slack Team"
+        ],
         'events': [
             {
                 'name': 'slashCommand',
