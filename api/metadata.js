@@ -35,7 +35,7 @@ module.exports.do = function(req, res){
                 'steps': [
                     "Navigate to https://slack.com/apps/manage/custom-integrations and click 'Slash Commands'",
                     "Click 'Add Configuration' and enter the command you would like to receive notifications for",
-                    "Under 'Intergration Settings', the URL option, input the following URL: __WEBHOOK_URL__"
+                    "Under 'Integration Settings', the URL option, input the following URL: __WEBHOOK_URL__"
                 ],
                 'args': [
                     {
